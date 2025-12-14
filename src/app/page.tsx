@@ -13,17 +13,20 @@ const steps = [
   {
     icon: Mail,
     title: "Verify your email",
-    description: "Use your company email to prove you're part of an accelerator portfolio.",
+    description:
+      "Use your company email to prove you're part of an accelerator portfolio.",
   },
   {
     icon: Shield,
     title: "Generate your credential",
-    description: "We create a cryptographic identity that can never be linked back to you.",
+    description:
+      "We create a cryptographic identity that can never be linked back to you.",
   },
   {
     icon: MessageSquare,
     title: "Share anonymously",
-    description: "Submit reports that are mathematically proven to be untraceable.",
+    description:
+      "Submit reports that are mathematically proven to be untraceable.",
   },
 ];
 
@@ -34,7 +37,7 @@ export default function Home() {
       <nav className="border-b border-border/40">
         <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
           <span className="text-xl font-semibold tracking-tight">
-            founder<span className="text-primary">tea</span>
+            founder<span className="text-primary">tea</span> 🍵
           </span>
           <Button variant="ghost" size="sm">
             About
@@ -45,11 +48,11 @@ export default function Home() {
       {/* Hero */}
       <section className="mx-auto max-w-5xl px-6 py-24 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          Anonymous VC reviews from{" "}
-          <span className="text-primary">verified founders</span>
+          Anonymous Founders Helping Founders with the tea 🫖 on VC's
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-          Find out the founder tea on VCs, or submit cryptographically anonymized feedback to help out other founders.
+          Find out the founder tea on VCs, or submit cryptographically
+          anonymized feedback to help out other founders.
         </p>
         <div className="mt-10 flex items-center justify-center gap-4">
           <Button size="lg">
@@ -71,7 +74,8 @@ export default function Home() {
           How it works
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
-          Zero-knowledge proofs let you prove you're a verified founder without revealing who you are.
+          Zero-knowledge proofs let you prove you're a verified founder without
+          revealing who you are.
         </p>
         <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {steps.map((step, i) => (
@@ -100,17 +104,23 @@ export default function Home() {
         <div className="flex flex-wrap items-center justify-center gap-8 text-center">
           <div>
             <div className="text-4xl font-bold text-primary">0</div>
-            <div className="mt-1 text-sm text-muted-foreground">Reports submitted</div>
+            <div className="mt-1 text-sm text-muted-foreground">
+              Reports submitted
+            </div>
           </div>
           <Separator orientation="vertical" className="h-12 hidden sm:block" />
           <div>
             <div className="text-4xl font-bold text-primary">0</div>
-            <div className="mt-1 text-sm text-muted-foreground">VCs reviewed</div>
+            <div className="mt-1 text-sm text-muted-foreground">
+              VCs reviewed
+            </div>
           </div>
           <Separator orientation="vertical" className="h-12 hidden sm:block" />
           <div>
             <div className="text-4xl font-bold text-primary">2</div>
-            <div className="mt-1 text-sm text-muted-foreground">Accelerators supported</div>
+            <div className="mt-1 text-sm text-muted-foreground">
+              Accelerators supported
+            </div>
           </div>
         </div>
       </section>
@@ -127,7 +137,11 @@ export default function Home() {
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           {accelerators.map((acc) => (
-            <Badge key={acc.slug} variant="secondary" className="px-4 py-2 text-sm">
+            <Badge
+              key={acc.slug}
+              variant="secondary"
+              className="px-4 py-2 text-sm"
+            >
               {acc.name}
             </Badge>
           ))}
@@ -141,12 +155,20 @@ export default function Home() {
       <footer className="border-t border-border/40 mt-12">
         <div className="mx-auto max-w-5xl px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-sm text-muted-foreground">
-            founder<span className="text-primary">tea</span> · Built with zero-knowledge proofs
+            founder<span className="text-primary">tea</span> 🍵 · Built with
+            zero-knowledge proofs
           </span>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-            <a href="#" className="hover:text-foreground transition-colors">How we protect you</a>
-            <a href="#" className="hover:text-foreground transition-colors">FAQ</a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Privacy
+            </a>
+            🥸
+            <a href="#" className="hover:text-foreground transition-colors">
+              How we protect you
+            </a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              FAQ
+            </a>
           </div>
         </div>
       </footer>
