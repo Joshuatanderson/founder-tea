@@ -14,12 +14,10 @@ import {
   MailCheck,
   Search,
   Send,
-  ArrowRight,
-  CheckCircle,
   XCircle,
-  ShieldCheck,
   Eye,
   EyeOff,
+  Lock,
 } from "lucide-react";
 
 const accelerators = [
@@ -88,114 +86,95 @@ export default function Home() {
           without revealing who you are.
         </p>
 
-        {/* Visual Flow */}
-        <div className="mt-16 flex flex-col items-center gap-8">
+        {/* Cards */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Step 1: Verify */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
-            <Card className="w-full sm:w-72">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                    <Mail className="h-5 w-5 text-primary" />
-                  </div>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                    Step 1
+          <Card className="flex flex-col">
+            <CardContent className="pt-6 flex-1">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                  <Mail className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  Step 1
+                </span>
+              </div>
+              <h3 className="text-lg font-medium">Verify your email</h3>
+              <div className="mt-4 rounded-lg bg-muted/50 p-3 font-mono text-sm">
+                <span className="text-muted-foreground">brian@</span>
+                <span className="text-primary">airbnb.com</span>
+              </div>
+              <div className="mt-3 flex items-center gap-2 text-sm text-green-500">
+                <MailCheck className="h-4 w-4" />
+                Domain matches a YC portfolio company
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Step 2: Transform */}
+          <Card className="flex flex-col border-primary/50">
+            <CardContent className="pt-6 flex-1">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20">
+                  <EyeOff className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  Step 2
+                </span>
+              </div>
+              <h3 className="text-lg font-medium">Identity transforms</h3>
+              <div className="mt-4 space-y-2">
+                <div className="flex items-center gap-2 text-sm">
+                  <XCircle className="h-4 w-4 text-destructive" />
+                  <span className="line-through text-muted-foreground">
+                    brian@airbnb.com
                   </span>
                 </div>
-                <h3 className="text-lg font-medium">Verify your email</h3>
-                <div className="mt-4 rounded-lg bg-muted/50 p-3 font-mono text-sm">
-                  <span className="text-muted-foreground">brian@</span>
-                  <span className="text-primary">airbnb.com</span>
-                </div>
-                <div className="mt-3 flex items-center gap-2 text-sm text-green-500">
-                  <MailCheck className="h-4 w-4" />
-                  Domain matches a YC portfolio company
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+              <div className="mt-4 flex items-center gap-2 rounded-lg bg-green-500/10 border border-green-500/30 px-3 py-2">
+                <Lock className="h-4 w-4 text-green-500" />
+                <span className="text-sm font-medium text-green-500">
+                  YC Founder
+                </span>
+              </div>
+            </CardContent>
+          </Card>
 
-            <ArrowRight className="h-6 w-6 text-muted-foreground hidden sm:block" />
-            <div className="h-6 w-px bg-border sm:hidden" />
-
-            {/* Step 2: Transform */}
-            <Card className="w-full sm:w-72 border-primary/50">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20">
-                    <ShieldCheck className="h-5 w-5 text-primary" />
-                  </div>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                    Step 2
-                  </span>
+          {/* Step 3: Publish */}
+          <Card className="flex flex-col">
+            <CardContent className="pt-6 flex-1">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                  <Send className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="text-lg font-medium">Identity transforms</h3>
-                <div className="mt-4 space-y-2">
-                  <div className="flex items-center gap-2 text-sm">
-                    <XCircle className="h-4 w-4 text-destructive" />
-                    <span className="line-through text-muted-foreground">
-                      brian@airbnb.com
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span className="text-foreground">
-                      Cryptographic proof generated
-                    </span>
-                  </div>
-                </div>
-                <p className="mt-3 text-xs text-muted-foreground">
-                  Email deleted. Only the proof remains.
+                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  Step 3
+                </span>
+              </div>
+              <h3 className="text-lg font-medium">Report published</h3>
+              <div className="mt-4 rounded-lg bg-muted/50 p-3 text-sm">
+                <p className="italic">
+                  &quot;They ghosted us after the term sheet...&quot;
                 </p>
-              </CardContent>
-            </Card>
-
-            <ArrowRight className="h-6 w-6 text-muted-foreground hidden sm:block" />
-            <div className="h-6 w-px bg-border sm:hidden" />
-
-            {/* Step 3: Publish */}
-            <Card className="w-full sm:w-72">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                    <EyeOff className="h-5 w-5 text-primary" />
-                  </div>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                    Step 3
-                  </span>
-                </div>
-                <h3 className="text-lg font-medium">Report published</h3>
-                <div className="mt-4 rounded-lg bg-muted/50 p-3 text-sm">
-                  <p className="italic">
-                    &quot;They ghosted us after the term sheet...&quot;
-                  </p>
-                </div>
-                <div className="mt-3 flex items-center justify-between text-sm">
-                  <Badge variant="secondary" className="text-xs">
-                    ✓ YC Founder
-                  </Badge>
-                  <span className="text-muted-foreground flex items-center gap-1">
-                    <Eye className="h-3 w-3" />
-                    Identity: ???
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Bottom explanation */}
-          <div className="mt-8 max-w-2xl text-center">
-            <p className="text-sm text-muted-foreground">
-              <span className="font-medium text-foreground">
-                The math guarantees it:
-              </span>{" "}
-              We can verify the report came from someone with a domain at a real
-              YC portfolio company, but{" "}
-              <span className="text-primary font-medium">
-                you're anonymous even to us.
-              </span>
-            </p>
-          </div>
+              </div>
+              <div className="mt-3 flex items-center justify-between text-sm">
+                <Badge variant="secondary" className="text-xs">
+                  ✓ YC Founder
+                </Badge>
+                <span className="text-muted-foreground flex items-center gap-1">
+                  <Eye className="h-3 w-3" />
+                  Identity: ???
+                </span>
+              </div>
+            </CardContent>
+          </Card>
         </div>
+
+        <p className="mt-10 text-center text-sm text-muted-foreground max-w-xl mx-auto">
+          <span className="font-medium text-foreground">The math guarantees it:</span>{" "}
+          We verify you have a domain at a real portfolio company, but{" "}
+          <span className="text-primary font-medium">you're anonymous even to us.</span>
+        </p>
       </section>
 
       <Separator className="mx-auto max-w-5xl" />
