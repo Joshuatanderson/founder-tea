@@ -1,36 +1,35 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import {
+  HeroBackground,
+  PatternSwitcher,
+  useHeroPattern,
+} from "@/components/hero-backgrounds";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Shield, MessageSquare, Search, Send } from "lucide-react";
+import {
+  Mail,
+  MailCheck,
+  Search,
+  Send,
+  ArrowRight,
+  CheckCircle,
+  XCircle,
+  ShieldCheck,
+  Eye,
+  EyeOff,
+} from "lucide-react";
 
 const accelerators = [
   { name: "Techstars", slug: "techstars" },
   { name: "Antler", slug: "antler" },
 ];
 
-const steps = [
-  {
-    icon: Mail,
-    title: "Verify your email",
-    description:
-      "Use your company email to prove you're part of an accelerator portfolio.",
-  },
-  {
-    icon: Shield,
-    title: "Generate your credential",
-    description:
-      "We create a cryptographic identity that can never be linked back to you.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Share anonymously",
-    description:
-      "Submit reports that are mathematically proven to be untraceable.",
-  },
-];
-
 export default function Home() {
+  const { pattern, setPattern } = useHeroPattern();
+
   return (
     <div className="min-h-screen bg-background">
       {/* Nav */}
@@ -46,7 +45,8 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="mx-auto max-w-5xl px-6 py-24 text-center">
+      <section className="relative mx-auto max-w-5xl px-6 py-24 text-center overflow-hidden">
+        <HeroBackground pattern={pattern} />
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           Anonymous Founders Helping Founders with the tea 🫖 on VC's
         </h1>
@@ -74,26 +74,117 @@ export default function Home() {
           How it works
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
-          Zero-knowledge proofs let you prove you're a verified founder without
-          revealing who you are.
+          Zero-knowledge proofs let you prove you&apos;re a verified founder
+          without revealing who you are.
         </p>
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
-          {steps.map((step, i) => (
-            <Card key={step.title} className="relative overflow-hidden">
+
+        {/* Visual Flow */}
+        <div className="mt-16 flex flex-col items-center gap-8">
+          {/* Step 1: Verify */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+            <Card className="w-full sm:w-72">
               <CardContent className="pt-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <step.icon className="h-6 w-6 text-primary" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                    <Mail className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    Step 1
+                  </span>
                 </div>
-                <div className="absolute right-4 top-4 text-5xl font-bold text-muted/30">
-                  {i + 1}
+                <h3 className="text-lg font-medium">Verify your email</h3>
+                <div className="mt-4 rounded-lg bg-muted/50 p-3 font-mono text-sm">
+                  <span className="text-muted-foreground">brian@</span>
+                  <span className="text-primary">airbnb.com</span>
                 </div>
-                <h3 className="text-lg font-medium">{step.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {step.description}
+                <div className="mt-3 flex items-center gap-2 text-sm text-green-500">
+                  <MailCheck className="h-4 w-4" />
+                  Domain matches a YC portfolio company
+                </div>
+              </CardContent>
+            </Card>
+
+            <ArrowRight className="h-6 w-6 text-muted-foreground hidden sm:block" />
+            <div className="h-6 w-px bg-border sm:hidden" />
+
+            {/* Step 2: Transform */}
+            <Card className="w-full sm:w-72 border-primary/50">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20">
+                    <ShieldCheck className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    Step 2
+                  </span>
+                </div>
+                <h3 className="text-lg font-medium">Identity transforms</h3>
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-center gap-2 text-sm">
+                    <XCircle className="h-4 w-4 text-destructive" />
+                    <span className="line-through text-muted-foreground">
+                      brian@airbnb.com
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <span className="text-foreground">
+                      Cryptographic proof generated
+                    </span>
+                  </div>
+                </div>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  Email deleted. Only the proof remains.
                 </p>
               </CardContent>
             </Card>
-          ))}
+
+            <ArrowRight className="h-6 w-6 text-muted-foreground hidden sm:block" />
+            <div className="h-6 w-px bg-border sm:hidden" />
+
+            {/* Step 3: Publish */}
+            <Card className="w-full sm:w-72">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                    <EyeOff className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    Step 3
+                  </span>
+                </div>
+                <h3 className="text-lg font-medium">Report published</h3>
+                <div className="mt-4 rounded-lg bg-muted/50 p-3 text-sm">
+                  <p className="italic">
+                    &quot;They ghosted us after the term sheet...&quot;
+                  </p>
+                </div>
+                <div className="mt-3 flex items-center justify-between text-sm">
+                  <Badge variant="secondary" className="text-xs">
+                    ✓ YC Founder
+                  </Badge>
+                  <span className="text-muted-foreground flex items-center gap-1">
+                    <Eye className="h-3 w-3" />
+                    Identity: ???
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Bottom explanation */}
+          <div className="mt-8 max-w-2xl text-center">
+            <p className="text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">
+                The math guarantees it:
+              </span>{" "}
+              We can verify the report came from someone with a domain at a real
+              YC portfolio company, but{" "}
+              <span className="text-primary font-medium">
+                you're anonymous even to us.
+              </span>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -172,6 +263,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Pattern Switcher for testing */}
+      <PatternSwitcher currentPattern={pattern} onPatternChange={setPattern} />
     </div>
   );
 }
