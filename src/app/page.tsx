@@ -31,9 +31,20 @@ export default function Home() {
   const { pattern, setPattern } = useHeroPattern();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Background layer - extends below hero and fades out */}
+      <div
+        className="absolute inset-x-0 top-0 h-[900px] pointer-events-none z-0"
+        style={{
+          maskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
+        }}
+      >
+        <HeroBackground pattern={pattern} />
+      </div>
+
       {/* Nav */}
-      <nav className="border-b border-border/40">
+      <nav className="relative z-10 border-b border-border/40">
         <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
           <span className="text-xl font-semibold tracking-tight">
             founder<span className="text-primary">tea</span> 🍵
@@ -45,8 +56,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="relative mx-auto max-w-5xl px-6 py-24 text-center overflow-hidden">
-        <HeroBackground pattern={pattern} />
+      <section className="relative z-10 mx-auto max-w-5xl px-6 py-24 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           Anonymous Founders Helping Founders with the tea 🫖 on VC's
         </h1>
@@ -66,10 +76,10 @@ export default function Home() {
         </div>
       </section>
 
-      <Separator className="mx-auto max-w-5xl" />
+      <Separator className="relative z-10 mx-auto max-w-5xl" />
 
       {/* How It Works */}
-      <section className="mx-auto max-w-5xl px-6 py-24">
+      <section className="relative z-10 mx-auto max-w-5xl px-6 py-24">
         <h2 className="text-center text-2xl font-semibold tracking-tight sm:text-3xl">
           How it works
         </h2>
