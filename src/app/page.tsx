@@ -16,11 +16,6 @@ import {
   Lock,
 } from "lucide-react";
 
-const accelerators = [
-  { name: "Techstars", slug: "techstars" },
-  { name: "Antler", slug: "antler" },
-];
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-background relative">
@@ -170,82 +165,6 @@ export default function Home() {
           <span className="text-primary font-medium">you're anonymous even to us.</span>
         </p>
       </section>
-
-      <Separator className="mx-auto max-w-5xl" />
-
-      {/* Stats */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <div className="flex flex-wrap items-center justify-center gap-8 text-center">
-          <div>
-            <div className="text-4xl font-bold text-primary">0</div>
-            <div className="mt-1 text-sm text-muted-foreground">
-              Reports submitted
-            </div>
-          </div>
-          <Separator orientation="vertical" className="h-12 hidden sm:block" />
-          <div>
-            <div className="text-4xl font-bold text-primary">0</div>
-            <div className="mt-1 text-sm text-muted-foreground">
-              VCs reviewed
-            </div>
-          </div>
-          <Separator orientation="vertical" className="h-12 hidden sm:block" />
-          <div>
-            <div className="text-4xl font-bold text-primary">2</div>
-            <div className="mt-1 text-sm text-muted-foreground">
-              Accelerators supported
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Separator className="mx-auto max-w-5xl" />
-
-      {/* Accelerator Badges */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <h2 className="text-center text-xl font-semibold tracking-tight">
-          Verified accelerator networks
-        </h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-sm text-muted-foreground">
-          Only founders from verified portfolio companies can submit reports.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          {accelerators.map((acc) => (
-            <Badge
-              key={acc.slug}
-              variant="secondary"
-              className="px-4 py-2 text-sm"
-            >
-              {acc.name}
-            </Badge>
-          ))}
-          <Badge variant="outline" className="px-4 py-2 text-sm">
-            + Request yours
-          </Badge>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-border/40 mt-12">
-        <div className="mx-auto max-w-5xl px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-sm text-muted-foreground">
-            founder<span className="text-primary">tea</span> 🍵 · Built with
-            zero-knowledge proofs
-          </span>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">
-              Privacy
-            </a>
-            🥸
-            <a href="#" className="hover:text-foreground transition-colors">
-              How we protect you
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              FAQ
-            </a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
