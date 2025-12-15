@@ -4,8 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
 import { ArrowLeft, Building2, ExternalLink } from "lucide-react";
-import { ReviewList } from "@/components/review-list";
-import { ReviewForm } from "@/components/review-form";
+import { VCReviewSection } from "@/components/vc-review-section";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -88,16 +87,7 @@ export default async function VCPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Review Form */}
-        <div className="mb-8">
-          <ReviewForm vcId={vc.id} vcName={vc.name} />
-        </div>
-
-        {/* Reviews List */}
-        <div>
-          <h2 className="text-xl font-semibold mb-4">Reviews</h2>
-          <ReviewList reviews={reviews ?? []} />
-        </div>
+        <VCReviewSection vcId={vc.id} vcName={vc.name} reviews={reviews ?? []} />
       </main>
     </div>
   );

@@ -32,3 +32,15 @@ export function getGroupIdFromStorageKey(key: string): string | null {
 export function notifyIdentityChanged(): void {
   window.dispatchEvent(new CustomEvent(IDENTITY_CHANGED_EVENT));
 }
+
+/**
+ * States for optimistic submission UI pattern.
+ */
+export const OPTIMISTIC_SUBMISSION_STATE = {
+  IDLE: 'IDLE',
+  SUBMITTING: 'SUBMITTING',
+  SUCCESS: 'SUCCESS',
+  ERROR: 'ERROR',
+} as const;
+
+export type OptimisticSubmissionState = typeof OPTIMISTIC_SUBMISSION_STATE[keyof typeof OPTIMISTIC_SUBMISSION_STATE];
