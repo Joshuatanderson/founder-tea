@@ -13,23 +13,36 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { createClient } from "@/lib/supabase/client";
-import { ShieldCheck, Loader2, Lock, Unlock } from "lucide-react";
+import { ShieldCheck, Loader2, Lock, Unlock, CheckCircle, ArrowLeft } from "lucide-react";
 
 type ValidationGroup = {
   id: string;
   name: string;
 };
 
+type Step = "email" | "code" | "success";
+
 export function VerifyModal() {
   const [open, setOpen] = useState(false);
+  const [step, setStep] = useState<Step>("email");
+
+  // Email step state
   const [email, setEmail] = useState("");
   const [allGroups, setAllGroups] = useState<ValidationGroup[]>([]);
   const [matchingGroupIds, setMatchingGroupIds] = useState<Set<string>>(new Set());
   const [isSearching, setIsSearching] = useState(false);
   const [isLoadingGroups, setIsLoadingGroups] = useState(false);
-  const [sentCode, setSentCode] = useState<string | null>(null);
+
+  // Code step state
+  const [token, setToken] = useState<string | null>(null);
+  const [expiresAt, setExpiresAt] = useState<number | null>(null);
+  const [eligibleGroups, setEligibleGroups] = useState<ValidationGroup[]>([]);
+  const [verificationCode, setVerificationCode] = useState("");
+
+  // Loading/error state
   const [isSending, setIsSending] = useState(false);
-  const [sendError, setSendError] = useState<string | null>(null);
+  const [isVerifying, setIsVerifying] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Extract domain from email
   const getDomain = (email: string) => {
@@ -78,7 +91,6 @@ export function VerifyModal() {
         return;
       }
 
-      // Extract the validation group IDs from the nested response
       const ids = new Set(
         data
           ?.map((item) => (item.validation_group as unknown as ValidationGroup)?.id)
@@ -113,31 +125,28 @@ export function VerifyModal() {
   // Reset state when modal closes
   useEffect(() => {
     if (!open) {
+      setStep("email");
       setEmail("");
       setMatchingGroupIds(new Set());
-      setSentCode(null);
-      setSendError(null);
+      setToken(null);
+      setExpiresAt(null);
+      setEligibleGroups([]);
+      setVerificationCode("");
+      setError(null);
     }
   }, [open]);
 
-  // Get the name of the first matched group
-  const getMatchedNetworkName = () => {
-    const matchedGroup = allGroups.find((g) => matchingGroupIds.has(g.id));
-    return matchedGroup?.name || "Unknown";
-  };
-
   const handleSendCode = async () => {
+    if (!hasMatch) return;
+
     setIsSending(true);
-    setSendError(null);
+    setError(null);
 
     try {
       const response = await fetch("/api/verify/send-code", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          networkName: getMatchedNetworkName(),
-        }),
+        body: JSON.stringify({ email }),
       });
 
       const data = await response.json();
@@ -146,13 +155,57 @@ export function VerifyModal() {
         throw new Error(data.error || "Failed to send code");
       }
 
-      // Store the code for display (remove in production)
-      setSentCode(data.code);
+      // Store token and eligible groups
+      setToken(data.token);
+      setExpiresAt(data.expiresAt);
+      setEligibleGroups(data.eligibleGroups || []);
+      setStep("code");
     } catch (err) {
-      setSendError(err instanceof Error ? err.message : "Failed to send code");
+      setError(err instanceof Error ? err.message : "Failed to send code");
     } finally {
       setIsSending(false);
     }
+  };
+
+  const handleVerifyCode = async () => {
+    if (!token) return;
+
+    setIsVerifying(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/verify/confirm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          token,
+          email,
+          code: verificationCode,
+          // commitment: will be added when we integrate Semaphore
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to verify code");
+      }
+
+      setStep("success");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to verify code");
+    } finally {
+      setIsVerifying(false);
+    }
+  };
+
+  const handleBack = () => {
+    setStep("email");
+    setToken(null);
+    setExpiresAt(null);
+    setEligibleGroups([]);
+    setVerificationCode("");
+    setError(null);
   };
 
   const hasMatch = matchingGroupIds.size > 0;
@@ -172,100 +225,173 @@ export function VerifyModal() {
         </DialogHeader>
 
         <div className="space-y-4">
-          {/* Available networks */}
-          <div className="space-y-2">
-            <p className="text-sm font-medium">Supported networks</p>
-            {isLoadingGroups ? (
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Loader2 className="h-4 w-4 animate-spin" />
-                Loading...
+          {/* Step 1: Email */}
+          {step === "email" && (
+            <>
+              {/* Available networks */}
+              <div className="space-y-2">
+                <p className="text-sm font-medium">Supported networks</p>
+                {isLoadingGroups ? (
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Loading...
+                  </div>
+                ) : (
+                  <div className="flex flex-wrap gap-2">
+                    {allGroups.map((group) => {
+                      const isMatched = matchingGroupIds.has(group.id);
+                      return (
+                        <Badge
+                          key={group.id}
+                          variant={isMatched ? "default" : "outline"}
+                          className={
+                            isMatched
+                              ? "bg-primary text-primary-foreground"
+                              : "text-muted-foreground border-muted-foreground/30"
+                          }
+                        >
+                          {isMatched ? (
+                            <Unlock className="mr-1 h-3 w-3" />
+                          ) : (
+                            <Lock className="mr-1 h-3 w-3" />
+                          )}
+                          {group.name}
+                        </Badge>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
-            ) : (
-              <div className="flex flex-wrap gap-2">
-                {allGroups.map((group) => {
-                  const isMatched = matchingGroupIds.has(group.id);
-                  return (
-                    <Badge
-                      key={group.id}
-                      variant={isMatched ? "default" : "outline"}
-                      className={
-                        isMatched
-                          ? "bg-primary text-primary-foreground"
-                          : "text-muted-foreground border-muted-foreground/30"
-                      }
-                    >
-                      {isMatched ? (
-                        <Unlock className="mr-1 h-3 w-3" />
-                      ) : (
-                        <Lock className="mr-1 h-3 w-3" />
-                      )}
-                      {group.name}
-                    </Badge>
-                  );
-                })}
+
+              {/* Email input */}
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium">
+                  Your work email
+                </label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="you@company.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <p className="text-xs text-muted-foreground">
+                  Test: gmail.com (Test Moon), mailinator.com (Test Sun)
+                </p>
               </div>
-            )}
-          </div>
 
-          {/* Email input */}
-          <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium">
-              Your work email
-            </label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="you@company.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <p className="text-xs text-muted-foreground">
-              Test: gmail.com (Test Moon), mailinator.com (Test Sun)
-            </p>
-          </div>
-
-          {/* Status */}
-          {isSearching && (
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Loader2 className="h-4 w-4 animate-spin" />
-              Checking domain...
-            </div>
-          )}
-
-          {!isSearching && email && getDomain(email) && !hasMatch && (
-            <p className="text-sm text-muted-foreground">
-              No matching accelerators for this domain.
-            </p>
-          )}
-
-          {/* Error message */}
-          {sendError && (
-            <p className="text-sm text-destructive">{sendError}</p>
-          )}
-
-          {/* Send code button */}
-          {hasMatch && !sentCode && (
-            <Button onClick={handleSendCode} disabled={isSending} className="w-full">
-              {isSending ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                "Send verification code"
+              {/* Status */}
+              {isSearching && (
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Checking domain...
+                </div>
               )}
-            </Button>
+
+              {!isSearching && email && getDomain(email) && !hasMatch && (
+                <p className="text-sm text-muted-foreground">
+                  No matching accelerators for this domain.
+                </p>
+              )}
+
+              {/* Error message */}
+              {error && <p className="text-sm text-destructive">{error}</p>}
+
+              {/* Send code button */}
+              {hasMatch && (
+                <Button onClick={handleSendCode} disabled={isSending} className="w-full">
+                  {isSending ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    "Send verification code"
+                  )}
+                </Button>
+              )}
+            </>
           )}
 
-          {/* Code sent confirmation */}
-          {sentCode && (
-            <div className="rounded-lg bg-green-500/10 border border-green-500/30 p-4 text-center">
-              <p className="text-sm text-green-500 mb-2">
-                Code sent to {email}
+          {/* Step 2: Verify Code */}
+          {step === "code" && (
+            <>
+              <div className="rounded-lg bg-muted/50 p-4">
+                <p className="text-sm text-muted-foreground">
+                  Code sent to <span className="text-foreground font-medium">{email}</span>
+                </p>
+                {eligibleGroups.length > 0 && (
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Eligible for{" "}
+                    <span className="text-primary font-medium">
+                      {eligibleGroups.map(g => g.name).join(", ")}
+                    </span>
+                  </p>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="code" className="text-sm font-medium">
+                  Verification code
+                </label>
+                <Input
+                  id="code"
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="123456"
+                  value={verificationCode}
+                  onChange={(e) => setVerificationCode(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                  className="text-center text-2xl tracking-widest font-mono"
+                />
+                {expiresAt && (
+                  <p className="text-xs text-muted-foreground text-center">
+                    Code expires in {Math.max(0, Math.ceil((expiresAt - Date.now()) / 60000))} minutes
+                  </p>
+                )}
+              </div>
+
+              {/* Error message */}
+              {error && <p className="text-sm text-destructive">{error}</p>}
+
+              <div className="flex gap-2">
+                <Button variant="outline" onClick={handleBack} className="flex-1">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back
+                </Button>
+                <Button
+                  onClick={handleVerifyCode}
+                  disabled={isVerifying || verificationCode.length !== 6}
+                  className="flex-1"
+                >
+                  {isVerifying ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Verifying...
+                    </>
+                  ) : (
+                    "Verify"
+                  )}
+                </Button>
+              </div>
+            </>
+          )}
+
+          {/* Step 3: Success */}
+          {step === "success" && (
+            <div className="text-center py-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/10 mb-4">
+                <CheckCircle className="h-8 w-8 text-green-500" />
+              </div>
+              <h3 className="text-lg font-medium mb-2">Verified!</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                You&apos;ve proven your membership in{" "}
+                <span className="text-primary font-medium">
+                  {eligibleGroups.map(g => g.name).join(", ")}
+                </span>
               </p>
-              <p className="text-xs text-muted-foreground">
-                (Dev mode: {sentCode})
-              </p>
+              <Button onClick={() => setOpen(false)} className="w-full">
+                Done
+              </Button>
             </div>
           )}
         </div>

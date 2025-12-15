@@ -1,27 +1,64 @@
 import { Resend } from "resend";
+import { createChallenge } from "@/lib/verification";
+import { createClient } from "@supabase/supabase-js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Server-side Supabase client
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY!
+);
 
 export async function POST(request: Request) {
   console.log("[send-code] Request received");
 
   try {
     const body = await request.json();
-    console.log("[send-code] Request body:", { email: body.email, networkName: body.networkName });
+    console.log("[send-code] Request body:", { email: body.email });
 
-    const { email, networkName } = body;
+    const { email } = body;
 
-    if (!email || !networkName) {
-      console.log("[send-code] Missing required fields");
+    if (!email) {
+      console.log("[send-code] Missing email");
       return Response.json(
-        { error: "Email and network name are required" },
+        { error: "Email is required" },
         { status: 400 }
       );
     }
 
-    // Generate a 6-digit code (mocked for now - not stored anywhere)
-    const code = Math.floor(100000 + Math.random() * 900000).toString();
-    console.log("[send-code] Generated code:", code);
+    // Extract domain from email
+    const domain = email.toLowerCase().split("@")[1];
+    if (!domain) {
+      return Response.json(
+        { error: "Invalid email format" },
+        { status: 400 }
+      );
+    }
+
+    // Verify domain exists in at least one validation group
+    const { data: memberships, error: membershipError } = await supabase
+      .from("validation_group_member")
+      .select("id, validation_group:validation_group_id(id, name)")
+      .eq("domain", domain);
+
+    if (membershipError || !memberships || memberships.length === 0) {
+      console.log("[send-code] Domain not found:", { domain, error: membershipError });
+      return Response.json(
+        { error: "Email domain not associated with any accelerator" },
+        { status: 403 }
+      );
+    }
+
+    // Get group names for the email (just for display)
+    const groups = memberships
+      .map((m) => m.validation_group as { id: string; name: string })
+      .filter(Boolean);
+    console.log("[send-code] Domain found in groups:", groups.map(g => g.name));
+
+    // Create stateless challenge (email only, no groupId binding)
+    const challenge = createChallenge(email);
+    console.log("[send-code] Generated challenge, code:", challenge.code);
 
     console.log("[send-code] Sending email via Resend...");
     console.log("[send-code] API key present:", !!process.env.RESEND_API_KEY);
@@ -29,7 +66,7 @@ export async function POST(request: Request) {
     const { data, error } = await resend.emails.send({
       from: "Founder Tea <founder-tea@resend.dev>",
       to: [email],
-      subject: `${code} is your verification code`,
+      subject: `${challenge.code} is your verification code`,
       html: `
         <div style="font-family: system-ui, -apple-system, sans-serif; background: #1c1917; color: #fafaf9; padding: 48px 24px; max-width: 480px; margin: 0 auto; text-align: center;">
           <div style="margin-bottom: 40px;">
@@ -41,12 +78,12 @@ export async function POST(request: Request) {
           </h1>
 
           <p style="color: #a8a29e; margin: 0 0 32px 0; line-height: 1.6; font-size: 15px;">
-            Prove your membership in <span style="color: #d946ef; font-weight: 500;">${networkName}</span>
+            Use this code to verify your email address
           </p>
 
           <div style="background: #292524; border: 1px solid #44403c; border-radius: 16px; padding: 32px; margin: 0 0 32px 0;">
             <span style="font-size: 40px; font-family: ui-monospace, SFMono-Regular, monospace; font-weight: 700; letter-spacing: 0.35em; color: #fafaf9;">
-              ${code}
+              ${challenge.code}
             </span>
           </div>
 
@@ -68,11 +105,12 @@ export async function POST(request: Request) {
 
     console.log("[send-code] Email sent successfully:", data);
 
+    // Return token and eligible groups to client
     return Response.json({
       success: true,
-      messageId: data?.id,
-      // Return code for testing (remove in production!)
-      code
+      token: challenge.token,
+      expiresAt: challenge.expiresAt,
+      eligibleGroups: groups,
     });
   } catch (error) {
     console.error("[send-code] API error:", error);
