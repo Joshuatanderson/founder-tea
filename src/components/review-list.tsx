@@ -35,7 +35,7 @@ export function ReviewList({ reviews }: Props) {
             <div className="flex items-start justify-between mb-3">
               <Badge variant="secondary" className="text-xs">
                 <ShieldCheck className="mr-1 h-3 w-3 text-green-500" />
-                {review.validation_group?.name ?? "Verified Founder"}
+                {review.validation_group?.name ? `${review.validation_group.name} founder` : "Verified founder"}
               </Badge>
               <span className="text-xs text-muted-foreground">
                 {new Date(review.created_at).toLocaleDateString()}

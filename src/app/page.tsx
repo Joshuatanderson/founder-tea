@@ -121,7 +121,7 @@ export default function Home() {
               <div className="mt-4 flex items-center gap-2 rounded-lg bg-green-500/10 border border-green-500/30 px-3 py-2">
                 <Lock className="h-4 w-4 text-green-500" />
                 <span className="text-sm font-medium text-green-500">
-                  YC Founder
+                  YC founder
                 </span>
               </div>
             </CardContent>
@@ -146,7 +146,7 @@ export default function Home() {
               </div>
               <div className="mt-3 flex items-center justify-between text-sm">
                 <Badge variant="secondary" className="text-xs">
-                  ✓ YC Founder
+                  ✓ YC founder
                 </Badge>
                 <span className="text-muted-foreground flex items-center gap-1">
                   <Eye className="h-3 w-3" />

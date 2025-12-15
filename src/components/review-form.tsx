@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Identity } from "@semaphore-protocol/identity";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -30,7 +30,7 @@ export function ReviewForm({ vcId, vcName }: Props) {
   const [isLoading, setIsLoading] = useState(true);
 
   // Load verified groups
-  const loadVerifiedGroups = async () => {
+  const loadVerifiedGroups = useCallback(async () => {
     const groupIds: string[] = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
@@ -58,21 +58,17 @@ export function ReviewForm({ vcId, vcName }: Props) {
       setVerifiedGroups(data);
     }
     setIsLoading(false);
-  };
+  }, []);
 
   // Load on mount and listen for identity changes
   useEffect(() => {
     loadVerifiedGroups();
 
-    const handleIdentityChange = () => {
-      loadVerifiedGroups();
-    };
-
-    window.addEventListener(IDENTITY_CHANGED_EVENT, handleIdentityChange);
+    window.addEventListener(IDENTITY_CHANGED_EVENT, loadVerifiedGroups);
     return () => {
-      window.removeEventListener(IDENTITY_CHANGED_EVENT, handleIdentityChange);
+      window.removeEventListener(IDENTITY_CHANGED_EVENT, loadVerifiedGroups);
     };
-  }, []);
+  }, [loadVerifiedGroups]);
 
   const handleSubmit = async () => {
     if (!content.trim() || verifiedGroups.length === 0) return;
@@ -201,7 +197,7 @@ export function ReviewForm({ vcId, vcName }: Props) {
           <span className="text-sm text-muted-foreground">Posting as:</span>
           <Badge variant="secondary" className="text-xs">
             <ShieldCheck className="mr-1 h-3 w-3 text-green-500" />
-            {verifiedGroups[0].name}
+            {verifiedGroups[0].name} founder
           </Badge>
         </div>
 
