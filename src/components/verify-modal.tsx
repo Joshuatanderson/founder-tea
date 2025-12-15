@@ -27,7 +27,9 @@ export function VerifyModal() {
   const [matchingGroupIds, setMatchingGroupIds] = useState<Set<string>>(new Set());
   const [isSearching, setIsSearching] = useState(false);
   const [isLoadingGroups, setIsLoadingGroups] = useState(false);
-  const [dummyCode, setDummyCode] = useState<string | null>(null);
+  const [sentCode, setSentCode] = useState<string | null>(null);
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
   // Extract domain from email
   const getDomain = (email: string) => {
@@ -113,14 +115,44 @@ export function VerifyModal() {
     if (!open) {
       setEmail("");
       setMatchingGroupIds(new Set());
-      setDummyCode(null);
+      setSentCode(null);
+      setSendError(null);
     }
   }, [open]);
 
-  const handleCreateCode = () => {
-    // Generate a dummy 6-digit code
-    const code = Math.floor(100000 + Math.random() * 900000).toString();
-    setDummyCode(code);
+  // Get the name of the first matched group
+  const getMatchedNetworkName = () => {
+    const matchedGroup = allGroups.find((g) => matchingGroupIds.has(g.id));
+    return matchedGroup?.name || "Unknown";
+  };
+
+  const handleSendCode = async () => {
+    setIsSending(true);
+    setSendError(null);
+
+    try {
+      const response = await fetch("/api/verify/send-code", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          networkName: getMatchedNetworkName(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send code");
+      }
+
+      // Store the code for display (remove in production)
+      setSentCode(data.code);
+    } catch (err) {
+      setSendError(err instanceof Error ? err.message : "Failed to send code");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const hasMatch = matchingGroupIds.size > 0;
@@ -206,21 +238,33 @@ export function VerifyModal() {
             </p>
           )}
 
-          {/* Create code button */}
-          {hasMatch && !dummyCode && (
-            <Button onClick={handleCreateCode} className="w-full">
-              Send verification code
+          {/* Error message */}
+          {sendError && (
+            <p className="text-sm text-destructive">{sendError}</p>
+          )}
+
+          {/* Send code button */}
+          {hasMatch && !sentCode && (
+            <Button onClick={handleSendCode} disabled={isSending} className="w-full">
+              {isSending ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                "Send verification code"
+              )}
             </Button>
           )}
 
-          {/* Dummy code display */}
-          {dummyCode && (
-            <div className="rounded-lg bg-muted/50 p-4 text-center">
-              <p className="text-sm text-muted-foreground mb-2">
-                Verification code (mock):
+          {/* Code sent confirmation */}
+          {sentCode && (
+            <div className="rounded-lg bg-green-500/10 border border-green-500/30 p-4 text-center">
+              <p className="text-sm text-green-500 mb-2">
+                Code sent to {email}
               </p>
-              <p className="text-2xl font-mono font-bold tracking-widest">
-                {dummyCode}
+              <p className="text-xs text-muted-foreground">
+                (Dev mode: {sentCode})
               </p>
             </div>
           )}
