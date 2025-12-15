@@ -1,11 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  HeroBackground,
-  PatternSwitcher,
-  useHeroPattern,
-} from "@/components/hero-backgrounds";
+import { HeroBackground } from "@/components/hero-backgrounds";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -26,8 +22,6 @@ const accelerators = [
 ];
 
 export default function Home() {
-  const { pattern, setPattern } = useHeroPattern();
-
   return (
     <div className="min-h-screen bg-background relative">
       {/* Background layer - extends below hero and fades out */}
@@ -38,7 +32,7 @@ export default function Home() {
           WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
         }}
       >
-        <HeroBackground pattern={pattern} />
+        <HeroBackground />
       </div>
 
       {/* Nav */}
@@ -252,9 +246,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* Pattern Switcher for testing */}
-      <PatternSwitcher currentPattern={pattern} onPatternChange={setPattern} />
     </div>
   );
 }
