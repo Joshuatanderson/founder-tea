@@ -51,12 +51,6 @@ export default function Home() {
               Find a VC
             </Button>
           </Link>
-          <Link href="/vcs">
-            <Button variant="outline" size="lg">
-              <Send className="mr-2 h-4 w-4" />
-              Submit a Report
-            </Button>
-          </Link>
           <VerifyModal />
         </div>
       </section>
