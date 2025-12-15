@@ -31,18 +31,31 @@ export async function POST(request: Request) {
       to: [email],
       subject: `${code} is your verification code`,
       html: `
-        <div style="font-family: system-ui, sans-serif; padding: 40px 20px; max-width: 480px;">
-          <h1 style="font-size: 24px; margin-bottom: 24px;">Your verification code</h1>
-          <p style="color: #666; margin-bottom: 24px;">
-            Use this code to prove your membership in <strong>${networkName}</strong>.
+        <div style="font-family: system-ui, -apple-system, sans-serif; background: #1c1917; color: #fafaf9; padding: 48px 24px; max-width: 480px; margin: 0 auto; text-align: center;">
+          <div style="margin-bottom: 40px;">
+            <span style="font-size: 20px; font-weight: 600; letter-spacing: -0.025em;">founder<span style="color: #d946ef;">tea</span></span>
+          </div>
+
+          <h1 style="font-size: 28px; font-weight: 700; margin: 0 0 12px 0; color: #fafaf9; letter-spacing: -0.025em;">
+            Your verification code
+          </h1>
+
+          <p style="color: #a8a29e; margin: 0 0 32px 0; line-height: 1.6; font-size: 15px;">
+            Prove your membership in <span style="color: #d946ef; font-weight: 500;">${networkName}</span>
           </p>
-          <div style="background: #f4f4f5; border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 24px;">
-            <span style="font-size: 32px; font-family: monospace; font-weight: bold; letter-spacing: 0.25em;">
+
+          <div style="background: #292524; border: 1px solid #44403c; border-radius: 16px; padding: 32px; margin: 0 0 32px 0;">
+            <span style="font-size: 40px; font-family: ui-monospace, SFMono-Regular, monospace; font-weight: 700; letter-spacing: 0.35em; color: #fafaf9;">
               ${code}
             </span>
           </div>
-          <p style="font-size: 14px; color: #888;">
-            This email is only used for verification. We don't store your email address.
+
+          <p style="font-size: 13px; color: #78716c; line-height: 1.6; margin: 0 0 8px 0;">
+            Expires in 10 minutes
+          </p>
+
+          <p style="font-size: 13px; color: #57534e; line-height: 1.6; margin: 0;">
+            Your email is never stored or tracked by foundertea.
           </p>
         </div>
       `,
