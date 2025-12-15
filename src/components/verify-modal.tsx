@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { createClient } from "@/lib/supabase/client";
 import { ShieldCheck, Loader2, Lock, Unlock, CheckCircle, ArrowLeft } from "lucide-react";
+import { getIdentityStorageKey, notifyIdentityChanged } from "@/lib/constants";
 
 type ValidationGroup = {
   id: string;
@@ -239,9 +240,11 @@ export function VerifyModal() {
 
       // Save identity to localStorage for future proof generation
       // The identity's privateKey can be used to recreate it later
-      const storageKey = `semaphore-identity-${group.id}`;
-      localStorage.setItem(storageKey, identity.export());
+      localStorage.setItem(getIdentityStorageKey(group.id), identity.export());
       console.log("[verify-modal] Identity saved to localStorage");
+
+      // Notify other components that identity changed
+      notifyIdentityChanged();
 
       setStep("success");
     } catch (err) {

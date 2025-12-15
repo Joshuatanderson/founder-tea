@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { VerifyModal } from "@/components/verify-modal";
+import { UserStatus } from "@/components/user-status";
 import {
   Mail,
   MailCheck,
@@ -37,9 +38,12 @@ export default function Home() {
           <span className="text-xl font-semibold tracking-tight">
             founder<span className="text-primary">tea</span> 🍵
           </span>
-          <Button variant="ghost" size="sm">
-            About
-          </Button>
+          <div className="flex items-center gap-4">
+            <UserStatus />
+            <Button variant="ghost" size="sm">
+              About
+            </Button>
+          </div>
         </div>
       </nav>
 
