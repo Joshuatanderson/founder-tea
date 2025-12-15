@@ -64,7 +64,7 @@ export async function POST(request: Request) {
     console.log("[send-code] API key present:", !!process.env.RESEND_API_KEY);
 
     const { data, error } = await resend.emails.send({
-      from: "Founder Tea <founder-tea@resend.dev>",
+      from: "Founder Tea <verification@foundertea.com>",
       to: [email],
       subject: `${challenge.code} is your verification code`,
       html: `
