@@ -52,7 +52,7 @@ export async function POST(request: Request) {
 
     // Get group names for the email (just for display)
     const groups = memberships
-      .map((m) => m.validation_group as { id: string; name: string })
+      .map((m) => m.validation_group as unknown as { id: string; name: string })
       .filter(Boolean);
     console.log("[send-code] Domain found in groups:", groups.map(g => g.name));
 

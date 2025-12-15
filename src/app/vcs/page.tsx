@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Header } from "@/components/header";
 import { ArrowLeft, Building2, ExternalLink } from "lucide-react";
 
 export default async function VCsPage() {
@@ -24,14 +25,7 @@ export default async function VCsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border/40">
-        <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-semibold tracking-tight">
-            founder<span className="text-primary">tea</span> 🍵
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       {/* Content */}
       <main className="mx-auto max-w-5xl px-6 py-12">

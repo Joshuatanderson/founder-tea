@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { VerifyModal } from "@/components/verify-modal";
-import { UserStatus } from "@/components/user-status";
+import { Header } from "@/components/header";
 import {
   Mail,
   MailCheck,
@@ -33,20 +33,7 @@ export default function Home() {
         <HeroBackground />
       </div>
 
-      {/* Nav */}
-      <nav className="relative z-10 border-b border-border/40">
-        <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
-          <span className="text-xl font-semibold tracking-tight">
-            founder<span className="text-primary">tea</span> 🍵
-          </span>
-          <div className="flex items-center gap-4">
-            <UserStatus />
-            <Button variant="ghost" size="sm">
-              About
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero */}
       <section className="relative z-10 mx-auto max-w-5xl px-6 py-24 text-center">

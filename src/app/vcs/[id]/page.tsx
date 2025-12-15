@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { Button } from "@/components/ui/button";
+import { Header } from "@/components/header";
 import { ArrowLeft, Building2, ExternalLink } from "lucide-react";
 import { ReviewList } from "@/components/review-list";
 import { ReviewForm } from "@/components/review-form";
@@ -26,7 +27,7 @@ export default async function VCPage({ params }: Props) {
   }
 
   // Fetch reviews for this VC
-  const { data: reviews, error: reviewsError } = await supabase
+  const { data: rawReviews, error: reviewsError } = await supabase
     .from("review")
     .select(`
       id,
@@ -44,16 +45,15 @@ export default async function VCPage({ params }: Props) {
     console.error("Error fetching reviews:", reviewsError);
   }
 
+  // Transform reviews to flatten the validation_group relation
+  const reviews = rawReviews?.map((review) => ({
+    ...review,
+    validation_group: review.validation_group as unknown as { id: string; name: string } | null,
+  }));
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border/40">
-        <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-semibold tracking-tight">
-            founder<span className="text-primary">tea</span> 🍵
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       {/* Content */}
       <main className="mx-auto max-w-5xl px-6 py-12">

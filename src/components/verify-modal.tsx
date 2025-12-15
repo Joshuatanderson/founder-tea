@@ -24,8 +24,18 @@ type ValidationGroup = {
 
 type Step = "email" | "code" | "select-group" | "success";
 
-export function VerifyModal() {
-  const [open, setOpen] = useState(false);
+type Props = {
+  trigger?: React.ReactElement;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+};
+
+export function VerifyModal({ trigger, open: controlledOpen, onOpenChange }: Props = {}) {
+  const [internalOpen, setInternalOpen] = useState(false);
+
+  // Support both controlled and uncontrolled modes
+  const open = controlledOpen !== undefined ? controlledOpen : internalOpen;
+  const setOpen = onOpenChange || setInternalOpen;
   const [step, setStep] = useState<Step>("email");
 
   // Email step state
@@ -272,12 +282,16 @@ export function VerifyModal() {
 
   const hasMatch = matchingGroupIds.size > 0;
 
+  const defaultTrigger = (
+    <Button size="lg">
+      <ShieldCheck className="mr-2 h-4 w-4" />
+      Verify
+    </Button>
+  );
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger render={<Button size="lg" />}>
-        <ShieldCheck className="mr-2 h-4 w-4" />
-        Verify
-      </DialogTrigger>
+      <DialogTrigger render={trigger || defaultTrigger} />
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Prove membership, stay anonymous</DialogTitle>

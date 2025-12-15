@@ -7,8 +7,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, ShieldCheck, ShieldX, Send } from "lucide-react";
-import { IDENTITY_STORAGE_PREFIX, getGroupIdFromStorageKey, getIdentityStorageKey } from "@/lib/constants";
+import { IDENTITY_STORAGE_PREFIX, getGroupIdFromStorageKey, getIdentityStorageKey, IDENTITY_CHANGED_EVENT } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/client";
+import { VerifyModal } from "@/components/verify-modal";
 
 type VerifiedGroup = {
   id: string;
@@ -28,38 +29,49 @@ export function ReviewForm({ vcId, vcName }: Props) {
   const [verifiedGroups, setVerifiedGroups] = useState<VerifiedGroup[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Load verified groups on mount
-  useEffect(() => {
-    const loadVerifiedGroups = async () => {
-      const groupIds: string[] = [];
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key?.startsWith(IDENTITY_STORAGE_PREFIX)) {
-          const groupId = getGroupIdFromStorageKey(key);
-          if (groupId) {
-            groupIds.push(groupId);
-          }
+  // Load verified groups
+  const loadVerifiedGroups = async () => {
+    const groupIds: string[] = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key?.startsWith(IDENTITY_STORAGE_PREFIX)) {
+        const groupId = getGroupIdFromStorageKey(key);
+        if (groupId) {
+          groupIds.push(groupId);
         }
       }
+    }
 
-      if (groupIds.length === 0) {
-        setIsLoading(false);
-        return;
-      }
-
-      const supabase = createClient();
-      const { data, error } = await supabase
-        .from("validation_group")
-        .select("id, name")
-        .in("id", groupIds);
-
-      if (!error && data) {
-        setVerifiedGroups(data);
-      }
+    if (groupIds.length === 0) {
+      setVerifiedGroups([]);
       setIsLoading(false);
+      return;
+    }
+
+    const supabase = createClient();
+    const { data, error } = await supabase
+      .from("validation_group")
+      .select("id, name")
+      .in("id", groupIds);
+
+    if (!error && data) {
+      setVerifiedGroups(data);
+    }
+    setIsLoading(false);
+  };
+
+  // Load on mount and listen for identity changes
+  useEffect(() => {
+    loadVerifiedGroups();
+
+    const handleIdentityChange = () => {
+      loadVerifiedGroups();
     };
 
-    loadVerifiedGroups();
+    window.addEventListener(IDENTITY_CHANGED_EVENT, handleIdentityChange);
+    return () => {
+      window.removeEventListener(IDENTITY_CHANGED_EVENT, handleIdentityChange);
+    };
   }, []);
 
   const handleSubmit = async () => {
@@ -134,14 +146,24 @@ export function ReviewForm({ vcId, vcName }: Props) {
     return (
       <Card>
         <CardContent className="py-6">
-          <div className="flex items-center gap-3">
-            <ShieldX className="h-5 w-5 text-muted-foreground" />
-            <div>
-              <p className="font-medium">Verification required</p>
-              <p className="text-sm text-muted-foreground">
-                You need to verify your founder status before you can leave a review.
-              </p>
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <ShieldX className="h-5 w-5 text-muted-foreground" />
+              <div>
+                <p className="font-medium">Verification required</p>
+                <p className="text-sm text-muted-foreground">
+                  Verify your founder status to leave a review.
+                </p>
+              </div>
             </div>
+            <VerifyModal
+              trigger={
+                <Button size="sm">
+                  <ShieldCheck className="mr-2 h-4 w-4" />
+                  Verify
+                </Button>
+              }
+            />
           </div>
         </CardContent>
       </Card>
