@@ -38,7 +38,11 @@ export function ReviewList({ reviews }: Props) {
                 {review.validation_group?.name ? `${review.validation_group.name} founder` : "Verified founder"}
               </Badge>
               <span className="text-xs text-muted-foreground">
-                {new Date(review.created_at).toLocaleDateString()}
+                {new Date(review.created_at).toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                })}
               </span>
             </div>
             <p className="text-sm leading-relaxed">{review.content}</p>
