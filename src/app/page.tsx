@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { HeroBackground } from "@/components/hero-backgrounds";
 import { Card, CardContent } from "@/components/ui/card";
@@ -57,14 +58,18 @@ export default function Home() {
           anonymized feedback to help out other founders.
         </p>
         <div className="mt-10 flex items-center justify-center gap-4">
-          <Button size="lg">
-            <Search className="mr-2 h-4 w-4" />
-            Find a VC
-          </Button>
-          <Button variant="outline" size="lg">
-            <Send className="mr-2 h-4 w-4" />
-            Submit a Report
-          </Button>
+          <Link href="/vcs">
+            <Button size="lg">
+              <Search className="mr-2 h-4 w-4" />
+              Find a VC
+            </Button>
+          </Link>
+          <Link href="/vcs">
+            <Button variant="outline" size="lg">
+              <Send className="mr-2 h-4 w-4" />
+              Submit a Report
+            </Button>
+          </Link>
           <VerifyModal />
         </div>
       </section>
