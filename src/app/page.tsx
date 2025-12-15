@@ -5,6 +5,7 @@ import { HeroBackground } from "@/components/hero-backgrounds";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { VerifyModal } from "@/components/verify-modal";
 import {
   Mail,
   MailCheck,
@@ -60,6 +61,7 @@ export default function Home() {
             <Send className="mr-2 h-4 w-4" />
             Submit a Report
           </Button>
+          <VerifyModal />
         </div>
       </section>
 
