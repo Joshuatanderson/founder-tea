@@ -58,6 +58,23 @@ export async function POST(request: Request) {
         );
       }
 
+      // Extract domain from verified email and validate group membership
+      const domain = result.email!.split("@")[1];
+      const { data: membership, error: membershipError } = await supabase
+        .from("validation_group_member")
+        .select("id")
+        .eq("domain", domain)
+        .eq("validation_group_id", groupId)
+        .single();
+
+      if (membershipError || !membership) {
+        console.log("[confirm] Domain not in requested group:", { domain, groupId });
+        return Response.json(
+          { error: "Email domain not eligible for this group" },
+          { status: 403 }
+        );
+      }
+
       // Check if commitment already exists
       const { data: existing } = await supabase
         .from("identity_commitment")
@@ -89,7 +106,7 @@ export async function POST(request: Request) {
         );
       }
 
-      console.log("[confirm] Commitment stored successfully");
+      console.log("[confirm] Commitment stored successfully for group:", groupId);
     }
 
     // Success - return verified email so client can look up eligible groups

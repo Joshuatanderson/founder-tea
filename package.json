@@ -10,6 +10,8 @@
   "dependencies": {
     "@base-ui/react": "^1.0.0",
     "@react-email/components": "^0.5.7",
+    "@semaphore-protocol/group": "^4.14.0",
+    "@semaphore-protocol/identity": "^4.14.0",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.87.1",
     "class-variance-authority": "^0.7.1",
