@@ -228,8 +228,6 @@ export function VerifyModal({ trigger, open: controlledOpen, onOpenChange }: Pro
       const identity = new Identity();
       const commitment = identity.commitment.toString();
 
-      console.log("[verify-modal] Generated identity commitment:", commitment.slice(0, 20) + "...");
-
       const response = await fetch("/api/verify/confirm", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -249,9 +247,19 @@ export function VerifyModal({ trigger, open: controlledOpen, onOpenChange }: Pro
       }
 
       // Save identity to localStorage for future proof generation
-      // The identity's privateKey can be used to recreate it later
-      localStorage.setItem(getIdentityStorageKey(group.id), identity.export());
-      console.log("[verify-modal] Identity saved to localStorage");
+      const storageKey = getIdentityStorageKey(group.id);
+      localStorage.setItem(storageKey, identity.export());
+
+      // Verify it was saved correctly
+      const savedIdentity = localStorage.getItem(storageKey);
+      const reloadedIdentity = Identity.import(savedIdentity!);
+      if (reloadedIdentity.commitment.toString() !== commitment) {
+        console.error("[verify-modal] Identity save failed - commitments don't match:", {
+          original: commitment,
+          reloaded: reloadedIdentity.commitment.toString(),
+        });
+        throw new Error("Failed to save identity. Please try again.");
+      }
 
       // Notify other components that identity changed
       notifyIdentityChanged();
