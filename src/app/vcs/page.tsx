@@ -3,7 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
-import { ArrowLeft, Building2, ExternalLink } from "lucide-react";
+import { ArrowLeft, Building2, ExternalLink, Plus } from "lucide-react";
 
 export default async function VCsPage() {
   const supabase = await createClient();
@@ -40,6 +40,15 @@ export default async function VCsPage() {
           <p className="mt-2 text-muted-foreground">
             Browse VCs and read anonymous reviews from verified founders.
           </p>
+        </div>
+
+        <div className="mb-6">
+          <Link href="/vcs/add">
+            <Button>
+              <Plus className="mr-2 h-4 w-4" />
+              Add a VC
+            </Button>
+          </Link>
         </div>
 
         {/* VC Grid */}

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
-import { ArrowLeft, Building2, ExternalLink } from "lucide-react";
+import { ArrowLeft, Building2, ExternalLink, Linkedin } from "lucide-react";
 import { VCReviewSection } from "@/components/vc-review-section";
 
 type Props = {
@@ -17,7 +17,7 @@ export default async function VCPage({ params }: Props) {
   // Fetch VC details
   const { data: vc, error: vcError } = await supabase
     .from("vc")
-    .select("id, name, website")
+    .select("id, name, website, linkedin")
     .eq("id", id)
     .single();
 
@@ -70,17 +70,29 @@ export default async function VCPage({ params }: Props) {
           </div>
           <div>
             <h1 className="text-3xl font-bold tracking-tight">{vc.name}</h1>
-            {vc.website && (
-              <a
-                href={vc.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1 mt-1"
-              >
-                {vc.website.replace(/^https?:\/\//, "")}
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            )}
+            <div className="flex items-center gap-3 mt-1">
+              {vc.website && (
+                <a
+                  href={vc.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
+                >
+                  {vc.website.replace(/^https?:\/\//, "")}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              )}
+              {vc.linkedin && (
+                <a
+                  href={vc.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
+              )}
+            </div>
             <p className="text-sm text-muted-foreground mt-2">
               {reviews?.length ?? 0} {(reviews?.length ?? 0) === 1 ? "review" : "reviews"}
             </p>
