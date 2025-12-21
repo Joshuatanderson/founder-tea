@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Identity } from "@semaphore-protocol/identity";
 import { Group } from "@semaphore-protocol/group";
-import { generateProof, verifyProof } from "@semaphore-protocol/proof";
+import { generateProof } from "@semaphore-protocol/proof";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -154,13 +154,7 @@ export function VCReviewSection({ vcId, vcName, reviews }: Props) {
 
       const proof = await generateProof(identity, group, message, scope);
 
-      // Verify the proof client-side before submitting
-      const isValid = await verifyProof(proof);
-      if (!isValid) {
-        console.error("[review] Generated proof failed verification");
-        throw new Error("Generated proof failed verification. Please try again.");
-      }
-
+      // Server handles verification - no client-side verification needed
       const response = await fetch("/api/reviews", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
