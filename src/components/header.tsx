@@ -12,6 +12,11 @@ export function Header() {
           founder<span className="text-primary">tea</span> 🍵
         </Link>
         <div className="flex items-center gap-4">
+          <Link href="/companies">
+            <Button variant="ghost" size="sm">
+              Companies
+            </Button>
+          </Link>
           <UserStatus />
           <Button variant="ghost" size="sm">
             About
