@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { promises as fs } from "fs";
-import path from "path";
+import { createClient } from "@/lib/supabase/server";
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -16,57 +15,34 @@ import {
 import { ArrowLeft, ExternalLink, Linkedin, Twitter } from "lucide-react";
 
 interface Company {
+  id: string;
   company_name: string;
-  domain: string;
-  year: string;
-  program: string;
-  location: string;
-  industries: string;
-  description?: string;
-  image_url?: string;
-  linkedin_url?: string;
-  twitter_url?: string;
-  crunchbase_url?: string;
-}
-
-function parseCSV(csvContent: string): Company[] {
-  const lines = csvContent.trim().split("\n");
-  const headers = lines[0].split(",").map((h) => h.trim());
-
-  return lines.slice(1).map((line) => {
-    const values: string[] = [];
-    let current = "";
-    let inQuotes = false;
-
-    for (const char of line) {
-      if (char === '"') {
-        inQuotes = !inQuotes;
-      } else if (char === "," && !inQuotes) {
-        values.push(current.trim());
-        current = "";
-      } else {
-        current += char;
-      }
-    }
-    values.push(current.trim());
-
-    const company: Record<string, string> = {};
-    headers.forEach((header, index) => {
-      company[header] = values[index] || "";
-    });
-
-    return company as unknown as Company;
-  });
+  domain: string | null;
+  year: number | null;
+  program: string | null;
+  location: string | null;
+  industries: string | null;
+  description: string | null;
+  image_url: string | null;
+  linkedin_url: string | null;
+  twitter_url: string | null;
+  crunchbase_url: string | null;
+  source: string;
 }
 
 export default async function CompaniesPage() {
-  // Read CSV file
-  const csvPath = path.join(process.cwd(), "techstars_portfolio.csv");
-  const csvContent = await fs.readFile(csvPath, "utf-8");
-  const companies = parseCSV(csvContent);
+  const supabase = await createClient();
 
-  // Group by source (for now just Techstars)
-  const techstarsCompanies = companies;
+  const { data: companies, error } = await supabase
+    .from("portfolio_company")
+    .select("*")
+    .order("year", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching companies:", error);
+  }
+
+  const techstarsCompanies = (companies || []) as Company[];
 
   return (
     <div className="min-h-screen bg-background">
@@ -108,8 +84,8 @@ export default async function CompaniesPage() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {techstarsCompanies.map((company, index) => (
-                  <TableRow key={index}>
+                {techstarsCompanies.map((company) => (
+                  <TableRow key={company.id}>
                     <TableCell className="font-medium">
                       <div className="flex items-center gap-3">
                         {company.image_url ? (
@@ -137,16 +113,16 @@ export default async function CompaniesPage() {
                     </TableCell>
                     <TableCell>{company.year}</TableCell>
                     <TableCell>
-                      <span className="text-sm">{company.program.replace("Techstars ", "")}</span>
+                      <span className="text-sm">{company.program?.replace("Techstars ", "")}</span>
                     </TableCell>
                     <TableCell>
                       <span className="text-sm text-muted-foreground">
-                        {company.location.split(",")[0]}
+                        {company.location?.split(",")[0]}
                       </span>
                     </TableCell>
                     <TableCell>
                       <div className="flex flex-wrap gap-1">
-                        {company.industries.split(",").slice(0, 2).map((industry, i) => (
+                        {company.industries?.split(",").slice(0, 2).map((industry, i) => (
                           <Badge key={i} variant="outline" className="text-xs">
                             {industry.trim()}
                           </Badge>

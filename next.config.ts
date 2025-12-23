@@ -19,8 +19,28 @@ const nextConfig: NextConfig = {
         hostname: "s3.amazonaws.com",
       },
       {
+        protocol: "http",
+        hostname: "s3.amazonaws.com",
+      },
+      {
         protocol: "https",
         hostname: "pbs.twimg.com",
+      },
+      {
+        protocol: "http",
+        hostname: "pbs.twimg.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.crunchbase.com",
+      },
+      {
+        protocol: "https",
+        hostname: "launchrock-assets.s3.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "graph.facebook.com",
       },
     ],
   },
