@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
@@ -15,7 +16,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ArrowLeft, ExternalLink, Linkedin } from "lucide-react";
+import { ArrowLeft, ExternalLink, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
+
+const PAGE_SIZE = 25;
 
 interface ValidationGroup {
   id: string;
@@ -42,10 +45,16 @@ interface ValidationGroupMember {
 }
 
 export default function CompaniesPage() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const [validationGroups, setValidationGroups] = useState<ValidationGroup[]>([]);
   const [selectedGroupId, setSelectedGroupId] = useState<string | null>(null);
   const [companies, setCompanies] = useState<ValidationGroupMember[]>([]);
+  const [totalCount, setTotalCount] = useState(0);
   const [loading, setLoading] = useState(true);
+
+  const currentPage = Math.max(1, parseInt(searchParams.get("page") || "1"));
+  const totalPages = Math.ceil(totalCount / PAGE_SIZE);
 
   // Fetch validation groups on mount
   useEffect(() => {
@@ -72,18 +81,22 @@ export default function CompaniesPage() {
     fetchValidationGroups();
   }, []);
 
-  // Fetch companies when selected group changes
+  // Fetch companies when selected group or page changes
   useEffect(() => {
     if (!selectedGroupId) return;
 
     async function fetchCompanies() {
       setLoading(true);
       const supabase = createClient();
-      const { data, error } = await supabase
+      const from = (currentPage - 1) * PAGE_SIZE;
+      const to = from + PAGE_SIZE - 1;
+
+      const { data, error, count } = await supabase
         .from("validation_group_member")
-        .select("*")
+        .select("*", { count: "exact" })
         .eq("validation_group_id", selectedGroupId)
-        .order("first_session_year", { ascending: false, nullsFirst: false });
+        .order("first_session_year", { ascending: false, nullsFirst: false })
+        .range(from, to);
 
       if (error) {
         console.error("Error fetching companies:", error);
@@ -92,13 +105,25 @@ export default function CompaniesPage() {
       }
 
       setCompanies(data || []);
+      setTotalCount(count || 0);
       setLoading(false);
     }
 
     fetchCompanies();
-  }, [selectedGroupId]);
+  }, [selectedGroupId, currentPage]);
 
   const selectedGroup = validationGroups.find((g) => g.id === selectedGroupId);
+
+  const handleGroupChange = (groupId: string) => {
+    setSelectedGroupId(groupId);
+    // Reset to page 1 when changing groups
+    router.push("/companies");
+  };
+
+  const goToPage = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    router.push(`/companies?page=${page}`);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -127,7 +152,7 @@ export default function CompaniesPage() {
               key={group.id}
               variant={selectedGroupId === group.id ? "default" : "outline"}
               size="sm"
-              onClick={() => setSelectedGroupId(group.id)}
+              onClick={() => handleGroupChange(group.id)}
             >
               {group.name}
             </Button>
@@ -138,7 +163,7 @@ export default function CompaniesPage() {
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
             <h2 className="text-xl font-semibold">{selectedGroup?.name || "Companies"}</h2>
-            <Badge variant="secondary">{companies.length} companies</Badge>
+            <Badge variant="secondary">{totalCount} companies</Badge>
           </div>
 
           {loading ? (
@@ -243,6 +268,38 @@ export default function CompaniesPage() {
                   ))}
                 </TableBody>
               </Table>
+            </div>
+          )}
+
+          {/* Pagination Controls */}
+          {!loading && totalCount > PAGE_SIZE && (
+            <div className="mt-4 flex items-center justify-between">
+              <p className="text-sm text-muted-foreground">
+                Showing {(currentPage - 1) * PAGE_SIZE + 1}-{Math.min(currentPage * PAGE_SIZE, totalCount)} of {totalCount}
+              </p>
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => goToPage(currentPage - 1)}
+                  disabled={currentPage <= 1}
+                >
+                  <ChevronLeft className="h-4 w-4 mr-1" />
+                  Previous
+                </Button>
+                <span className="text-sm text-muted-foreground px-2">
+                  Page {currentPage} of {totalPages}
+                </span>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => goToPage(currentPage + 1)}
+                  disabled={currentPage >= totalPages}
+                >
+                  Next
+                  <ChevronRight className="h-4 w-4 ml-1" />
+                </Button>
+              </div>
             </div>
           )}
         </div>

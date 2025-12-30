@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "assets.techstars.com",
+      },
+      {
+        protocol: "https",
         hostname: "s3.amazonaws.com",
       },
       {
