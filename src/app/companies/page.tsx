@@ -16,7 +16,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ArrowLeft, ExternalLink, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ArrowLeft, ExternalLink, Linkedin, ChevronLeft, ChevronRight, Search } from "lucide-react";
 
 const PAGE_SIZE = 25;
 
@@ -52,9 +53,19 @@ export default function CompaniesPage() {
   const [companies, setCompanies] = useState<ValidationGroupMember[]>([]);
   const [totalCount, setTotalCount] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [searchInput, setSearchInput] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
 
   const currentPage = Math.max(1, parseInt(searchParams.get("page") || "1"));
   const totalPages = Math.ceil(totalCount / PAGE_SIZE);
+
+  // Debounce search input
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(searchInput);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchInput]);
 
   // Fetch validation groups on mount
   useEffect(() => {
@@ -81,7 +92,14 @@ export default function CompaniesPage() {
     fetchValidationGroups();
   }, []);
 
-  // Fetch companies when selected group or page changes
+  // Reset to page 1 when search changes
+  useEffect(() => {
+    if (debouncedSearch && currentPage !== 1) {
+      router.push("/companies");
+    }
+  }, [debouncedSearch]);
+
+  // Fetch companies when selected group, page, or search changes
   useEffect(() => {
     if (!selectedGroupId) return;
 
@@ -91,11 +109,18 @@ export default function CompaniesPage() {
       const from = (currentPage - 1) * PAGE_SIZE;
       const to = from + PAGE_SIZE - 1;
 
-      const { data, error, count } = await supabase
+      let query = supabase
         .from("validation_group_member")
         .select("*", { count: "exact" })
-        .eq("validation_group_id", selectedGroupId)
-        .order("first_session_year", { ascending: false, nullsFirst: false })
+        .eq("validation_group_id", selectedGroupId);
+
+      // Add fuzzy search filter for company_name and domain
+      if (debouncedSearch) {
+        query = query.or(`company_name.ilike.*${debouncedSearch}*,domain.ilike.*${debouncedSearch}*`);
+      }
+
+      const { data, error, count } = await query
+        .order("first_session_year", { ascending: true, nullsFirst: false })
         .range(from, to);
 
       if (error) {
@@ -110,12 +135,14 @@ export default function CompaniesPage() {
     }
 
     fetchCompanies();
-  }, [selectedGroupId, currentPage]);
+  }, [selectedGroupId, currentPage, debouncedSearch]);
 
   const selectedGroup = validationGroups.find((g) => g.id === selectedGroupId);
 
   const handleGroupChange = (groupId: string) => {
     setSelectedGroupId(groupId);
+    setSearchInput("");
+    setDebouncedSearch("");
     // Reset to page 1 when changing groups
     router.push("/companies");
   };
@@ -161,13 +188,28 @@ export default function CompaniesPage() {
 
         {/* Companies Section */}
         <div className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <h2 className="text-xl font-semibold">{selectedGroup?.name || "Companies"}</h2>
-            <Badge variant="secondary">{totalCount} companies</Badge>
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <h2 className="text-xl font-semibold">{selectedGroup?.name || "Companies"}</h2>
+              <Badge variant="secondary">{totalCount} companies</Badge>
+            </div>
+            <div className="relative w-64">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search companies..."
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                className="pl-9"
+              />
+            </div>
           </div>
 
           {loading ? (
             <div className="text-muted-foreground py-8 text-center">Loading...</div>
+          ) : companies.length === 0 ? (
+            <div className="text-muted-foreground py-8 text-center">
+              {debouncedSearch ? `No companies found matching "${debouncedSearch}"` : "No companies found"}
+            </div>
           ) : (
             <div className="rounded-lg border">
               <Table>
@@ -187,15 +229,17 @@ export default function CompaniesPage() {
                       <TableCell className="font-medium">
                         <div className="flex items-center gap-3">
                           {company.logo_url ? (
-                            <Image
-                              src={company.logo_url}
-                              alt={company.company_name || company.domain}
-                              width={32}
-                              height={32}
-                              className="rounded-md object-cover"
-                            />
+                            <div className="w-8 h-8 rounded-md bg-white flex-shrink-0 flex items-center justify-center overflow-hidden">
+                              <Image
+                                src={company.logo_url}
+                                alt={company.company_name || company.domain}
+                                width={32}
+                                height={32}
+                                className="object-contain w-full h-full"
+                              />
+                            </div>
                           ) : (
-                            <div className="w-8 h-8 rounded-md bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">
+                            <div className="w-8 h-8 rounded-md bg-muted flex-shrink-0 flex items-center justify-center text-xs font-bold text-muted-foreground">
                               {(company.company_name || company.domain).charAt(0).toUpperCase()}
                             </div>
                           )}
