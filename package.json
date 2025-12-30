@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack"
+    "build": "next build --webpack",
+    "typegen": "npx supabase gen types typescript --project-id vansaiveqynjsuojnogi --schema public > src/types/database.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
