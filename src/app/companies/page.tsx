@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
@@ -45,6 +45,15 @@ interface ValidationGroupMember {
 }
 
 export default function CompaniesPage() {
+  // useSearchParams needs a Suspense boundary to prerender
+  return (
+    <Suspense>
+      <CompaniesContent />
+    </Suspense>
+  );
+}
+
+function CompaniesContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [validationGroups, setValidationGroups] = useState<ValidationGroup[]>([]);
