@@ -1,14 +1,8 @@
 import { Resend } from "resend";
 import { createChallenge } from "@/lib/verification";
-import { createClient } from "@supabase/supabase-js";
+import { sql } from "@/lib/db";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-// Server-side Supabase client
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY!
-);
 
 export async function POST(request: Request) {
   console.log("[send-code] Request received");
@@ -37,23 +31,21 @@ export async function POST(request: Request) {
     }
 
     // Verify domain exists in at least one validation group
-    const { data: memberships, error: membershipError } = await supabase
-      .from("validation_group_member")
-      .select("id, validation_group:validation_group_id(id, name)")
-      .eq("domain", domain);
+    const groups = await sql<{ id: string; name: string }>`
+      select distinct g.id, g.name
+      from validation_group_member m
+      join validation_group g on g.id = m.validation_group_id
+      where m.domain = ${domain}
+      order by g.name`;
 
-    if (membershipError || !memberships || memberships.length === 0) {
-      console.log("[send-code] Domain not found:", { domain, error: membershipError });
+    if (groups.length === 0) {
+      console.log("[send-code] Domain not found:", { domain });
       return Response.json(
         { error: "Email domain not associated with any accelerator" },
         { status: 403 }
       );
     }
 
-    // Get group names for the email (just for display)
-    const groups = memberships
-      .map((m) => m.validation_group as unknown as { id: string; name: string })
-      .filter(Boolean);
     console.log("[send-code] Domain found in groups:", groups.map(g => g.name));
 
     // Create stateless challenge (email only, no groupId binding)

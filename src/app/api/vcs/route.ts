@@ -1,9 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+import { sql, isUniqueViolation } from "@/lib/db";
 
 export async function POST(request: Request) {
   try {
@@ -17,32 +12,19 @@ export async function POST(request: Request) {
       );
     }
 
-    const { data: vc, error } = await supabase
-      .from("vc")
-      .insert({
-        name: name.trim(),
-        website: website || null,
-        linkedin: linkedin || null,
-      })
-      .select("id")
-      .single();
-
-    if (error) {
-      if (error.code === "23505") {
-        return Response.json(
-          { error: "A VC with this name already exists" },
-          { status: 409 }
-        );
-      }
-      console.error("[vcs] Insert error:", error);
-      return Response.json(
-        { error: "Failed to add VC" },
-        { status: 500 }
-      );
-    }
+    const [vc] = await sql<{ id: string }>`
+      insert into vc (name, website, linkedin)
+      values (${name.trim()}, ${website || null}, ${linkedin || null})
+      returning id`;
 
     return Response.json({ success: true, vcId: vc.id });
   } catch (error) {
+    if (isUniqueViolation(error)) {
+      return Response.json(
+        { error: "A VC with this name already exists" },
+        { status: 409 }
+      );
+    }
     console.error("[vcs] API error:", error);
     return Response.json(
       { error: "Failed to add VC" },

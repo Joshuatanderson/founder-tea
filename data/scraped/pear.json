@@ -1,0 +1,3693 @@
+[
+  {
+    "company_name": "Ascerta",
+    "domain": "ascerta.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Pravah",
+    "domain": "pravah.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Maximum",
+    "domain": "maximum.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Guard Owl",
+    "domain": "guardowlco.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Zubale",
+    "domain": "zubale.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Zippin",
+    "domain": "getzippin.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Zag Bio",
+    "domain": "zagbio.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "xSeer",
+    "domain": "paloaltonetworks.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Wrangle",
+    "domain": "wrangle.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Wood Wide AI",
+    "domain": "woodwide.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "WindBorne",
+    "domain": "windbornesystems.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Wexler",
+    "domain": "wexler.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Wedding Party",
+    "domain": "instacart.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Voyage",
+    "domain": "voyageai.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Viz.ai",
+    "domain": "viz.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Viewpoints AI",
+    "domain": "viewpoints.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "ViaGlobal Ventures",
+    "domain": "via.work",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Velocity Bio",
+    "domain": "velocitybio.tech",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Valar Labs",
+    "domain": "valarlabs.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "UpDoc AI",
+    "domain": "updoc.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Typedef",
+    "domain": "typedef.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Tyba",
+    "domain": "tyba.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "TruthSystems",
+    "domain": "truthsystems.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "TruTec",
+    "domain": "trutec.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "TrueMeter",
+    "domain": "truemeter.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "True & Co",
+    "domain": "trueandco.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Trimz",
+    "domain": "trimz.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Transcera",
+    "domain": "transcera.bio",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Topsort",
+    "domain": "topsort.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "TeachShare",
+    "domain": "teachshare.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "TeachFX",
+    "domain": "teachfx.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Switchmate",
+    "domain": "mysimplysmarthome.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "SweatPals",
+    "domain": "sweatpals.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Sudozi",
+    "domain": "sudozi.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Stellation",
+    "domain": "stellationcare.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Stan",
+    "domain": "stan.store",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Spur",
+    "domain": "spurtest.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Solvvy",
+    "domain": "solvvy.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Socratix AI",
+    "domain": "getsocratix.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "SnoutID",
+    "domain": "snoutid.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Sniffspot",
+    "domain": "sniffspot.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Smarty.AI",
+    "domain": "smarty.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Seven Starling",
+    "domain": "sevenstarling.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Series",
+    "domain": "series.so",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Sequel",
+    "domain": "trysequel.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Senti Bio",
+    "domain": "sentibio.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "SellScale",
+    "domain": "sellscale.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Savvi AI",
+    "domain": "savviai.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "SalesPatriot",
+    "domain": "salespatriot.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Rollout",
+    "domain": "rollouthq.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "ResiQuant",
+    "domain": "resiquant.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "rePurpose",
+    "domain": "repurpose.global",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Remuner",
+    "domain": "remuner.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Rely Health",
+    "domain": "relyhealth.care",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Reduct.video",
+    "domain": "reduct.video",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Real Sports",
+    "domain": "realapp.link",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Range Biotechnologies",
+    "domain": "range.bio",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Radar Therapeutics",
+    "domain": "rnasensing.bio",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Quansa",
+    "domain": "quansa.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Quadric.io",
+    "domain": "quadric.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Prohost AI",
+    "domain": "prohost.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Portal Biotechnologies",
+    "domain": "portal.bio",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "pomelo",
+    "domain": "pomelo.la",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Polimorphic",
+    "domain": "polimorphic.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Polarr",
+    "domain": "polarr.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Pocus",
+    "domain": "pocus.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Pixel Labs",
+    "domain": "nextdoor.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Piston",
+    "domain": "piston.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Pillsorted",
+    "domain": "pillsorted.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Phaselaw",
+    "domain": "phase.law",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "PemPem",
+    "domain": "pempem.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Pearl Street",
+    "domain": "pearlstreettechnologies.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Paxos Health",
+    "domain": "paxosappeals.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Parallax Worlds",
+    "domain": "parallaxworlds.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Pando",
+    "domain": "pandopooling.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Osmos",
+    "domain": "osmos.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Osmind",
+    "domain": "osmind.org",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Orby AI",
+    "domain": "uniphore.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Openfort",
+    "domain": "openfort.xyz",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Oodle AI",
+    "domain": "oodle.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Onramp",
+    "domain": "onramp.us",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Nuvo",
+    "domain": "nuvo.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Nova Credit",
+    "domain": "novacredit.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "NomadicML",
+    "domain": "nomadicml.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Nightfall",
+    "domain": "nightfall.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "NeuroNav",
+    "domain": "neuronav.org",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Neura Health",
+    "domain": "neurahealth.co",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Millibatt",
+    "domain": "millibatt.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Meridian",
+    "domain": "usemeridian.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Menta",
+    "domain": "menta.global",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Melonn",
+    "domain": "melonn.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Matter Intelligence",
+    "domain": "matter.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Manta Cares",
+    "domain": "mantacares.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Maker",
+    "domain": "makerwine.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Lynk",
+    "domain": "lynksearch.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Locate AI",
+    "domain": "locate.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Learn to Win",
+    "domain": "learntowin.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Lantern",
+    "domain": "lanternhq.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Known",
+    "domain": "knowndating.com",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company-img-8.jpg",
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio",
+      "PearX S25"
+    ],
+    "first_session_year": 2025,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Knoetic",
+    "domain": "knoetic.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Kindroid AI",
+    "domain": "kindroid.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Kin Health",
+    "domain": "meetkin.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Keebo",
+    "domain": "keebo.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Kale",
+    "domain": "kalecard.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Just Appraised",
+    "domain": "justappraised.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Joyce Health",
+    "domain": "joycehealth.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Jetinsight",
+    "domain": "jetinsight.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Inventa",
+    "domain": "inventa.shop",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Instaread",
+    "domain": "instaread.co",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Insight Health",
+    "domain": "insighthealth.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Infinite Uptime",
+    "domain": "infinite-uptime.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Infinimmune",
+    "domain": "infinimmune.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Incalmo",
+    "domain": "incalmo.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "ImpriMed",
+    "domain": "imprimedicine.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "immi",
+    "domain": "immieats.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Ideogram AI",
+    "domain": "ideogram.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Iago",
+    "domain": "getiago.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Honey Homes",
+    "domain": "honeyhomes.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Hilt",
+    "domain": "hilt.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Hexus",
+    "domain": "hexus.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Hexagon",
+    "domain": "milo.joinhexagon.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Heap",
+    "domain": "heap.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Gryps",
+    "domain": "gryps.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Grove AI",
+    "domain": "grovetrials.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Greatly Health",
+    "domain": "greatlyhealth.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Gravis Robotics",
+    "domain": "gravisrobotics.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Gradio",
+    "domain": "gradio.app",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Glide",
+    "domain": "withglide.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Gaya",
+    "domain": "gayafi.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Gatsby",
+    "domain": "gatsby.events",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Galvant",
+    "domain": "galvant.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Frontdesk",
+    "domain": "myaifrontdesk.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Freewill",
+    "domain": "freewill.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Freeflow",
+    "domain": "freeflow.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Foresight Diagnostics",
+    "domain": "foresight-dx.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Flyway",
+    "domain": "flywayhealth.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Flock",
+    "domain": "flockhomes.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Flax Health",
+    "domain": "flax.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "FitBod",
+    "domain": "fitbod.me",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Finkargo",
+    "domain": "finkargo.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Fieldbook",
+    "domain": "flexport.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Farmraise",
+    "domain": "farmraise.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Expedock",
+    "domain": "expedock.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "EmCasa",
+    "domain": "emcasa.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Emburse",
+    "domain": "emburse.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Elo",
+    "domain": "elo.ad",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Elevate",
+    "domain": "elevateapp.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Edge DB",
+    "domain": "edgedb.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Doxel",
+    "domain": "doxel.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "DevAI",
+    "domain": "dev-ai.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Dealops",
+    "domain": "dealops.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Datum",
+    "domain": "datumdots.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Darwin Homes",
+    "domain": "darwinhomes.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Cymbal",
+    "domain": "cymbal.co",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Crossmint",
+    "domain": "crossmint.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Coverbase",
+    "domain": "coverbase.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Covalent",
+    "domain": "covalentnetworks.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Counsel Health",
+    "domain": "counselhealth.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "ConfigHub",
+    "domain": "confighub.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Conduit Tech, Inc.",
+    "domain": "getconduit.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Clearbrain",
+    "domain": "clearbrain.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Capella Space Labs",
+    "domain": "capellaspace.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Cambio AI",
+    "domain": "cambio.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Camber",
+    "domain": "cambercloud.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Burst",
+    "domain": "heyfloat.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Budgie Health",
+    "domain": "budgie-health.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "BridgeHealthAI",
+    "domain": "bridgehealthequity.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Brico",
+    "domain": "brico.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Branch",
+    "domain": "branch.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Boxbot",
+    "domain": "boxbot.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Blueberry",
+    "domain": "blueberry.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "BioAge Labs",
+    "domain": "bioagelabs.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Beyond Trucks",
+    "domain": "beyondtrucks.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Axle Health",
+    "domain": "axlehealth.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Aviary",
+    "domain": "aviaryhealth.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Aurora",
+    "domain": "aurorasolar.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "August",
+    "domain": "august.law",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Atticus Labs",
+    "domain": "atticus.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Atrix AI",
+    "domain": "atrix.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "AspireIQ",
+    "domain": "aspire.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Apparate Labs",
+    "domain": "apparate.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Anycart",
+    "domain": "anycart.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Alpine Bio",
+    "domain": "alpbio.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Allocate",
+    "domain": "sage.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Aklivity",
+    "domain": "aklivity.io",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Akko",
+    "domain": "getakko.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "AfterHour",
+    "domain": "afterhour.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Advex",
+    "domain": "advex.ai",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Adaptive Real Estate",
+    "domain": "adaptive.build",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Acely",
+    "domain": "acely.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Abstractive",
+    "domain": "abstractivehealth.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Aaptiv",
+    "domain": "aaptiv.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Miter",
+    "domain": "miter.com",
+    "logo_url": null,
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Vals AI",
+    "domain": "vals.ai",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_vals.png",
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Infrastructure"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Hertha Metals",
+    "domain": "herthametals.com",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_hertha.png",
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "Deep Tech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Convey",
+    "domain": "convey.dev",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_convey.png",
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Vanta",
+    "domain": "vanta.com",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_vanta.png",
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Cognition",
+    "domain": "cognition.com",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_cognition.png",
+    "linkedin_url": null,
+    "city": null,
+    "country": null,
+    "industry_vertical": [
+      "AI Applications"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Forus",
+    "domain": "withtandem.com",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_forus.png",
+    "linkedin_url": null,
+    "city": "New York City",
+    "country": null,
+    "industry_vertical": [
+      "Healthcare"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Federato",
+    "domain": "federato.ai",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_federato.png",
+    "linkedin_url": "https://www.linkedin.com/company/federato/",
+    "city": "San Francisco",
+    "country": "United States",
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Guardant Health",
+    "domain": "guardanthealth.com",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_guardant.png",
+    "linkedin_url": "https://www.linkedin.com/company/guardanthealth/",
+    "city": "Palo Alto",
+    "country": "United States",
+    "industry_vertical": [
+      "Biotech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Affinity",
+    "domain": "affinity.co",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_affinity.png",
+    "linkedin_url": "https://www.linkedin.com/company/project-affinity/",
+    "city": "San Francisco",
+    "country": "United States",
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Gusto",
+    "domain": "gusto.com",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_gusto.png",
+    "linkedin_url": "https://www.linkedin.com/company/gustohq/",
+    "city": "San Francisco",
+    "country": "United States",
+    "industry_vertical": [
+      "B2B"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "DoorDash",
+    "domain": "doordash.com",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_doordash.png",
+    "linkedin_url": "https://www.linkedin.com/company/doordash/",
+    "city": "San Francisco",
+    "country": "United States",
+    "industry_vertical": [
+      "Consumer"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": true,
+    "is_unicorn": false
+  },
+  {
+    "company_name": "Cardless",
+    "domain": "cardless.com",
+    "logo_url": "https://pear.vc/wp-content/uploads/2026/08/company_cardless.png",
+    "linkedin_url": "https://www.linkedin.com/company/cardless/",
+    "city": "San Francisco",
+    "country": "United States",
+    "industry_vertical": [
+      "FinTech"
+    ],
+    "program_names": [
+      "Pear VC portfolio"
+    ],
+    "first_session_year": null,
+    "founded_year": null,
+    "is_exit": false,
+    "is_unicorn": false
+  }
+]

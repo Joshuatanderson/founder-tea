@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { sql, isUuid } from "@/lib/db";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
 import { ArrowLeft, Building2, ExternalLink, Linkedin } from "lucide-react";
@@ -12,42 +12,42 @@ type Props = {
 
 export default async function VCPage({ params }: Props) {
   const { id } = await params;
-  const supabase = await createClient();
+  if (!isUuid(id)) {
+    notFound();
+  }
 
   // Fetch VC details
-  const { data: vc, error: vcError } = await supabase
-    .from("vc")
-    .select("id, name, website, linkedin")
-    .eq("id", id)
-    .single();
+  const [vc] = await sql<{
+    id: string;
+    name: string;
+    website: string | null;
+    linkedin: string | null;
+  }>`select id, name, website, linkedin from vc where id = ${id}`;
 
-  if (vcError || !vc) {
+  if (!vc) {
     notFound();
   }
 
   // Fetch reviews for this VC
-  const { data: rawReviews, error: reviewsError } = await supabase
-    .from("review")
-    .select(`
-      id,
-      content,
-      created_at,
-      validation_group:validation_group_id (
-        id,
-        name
-      )
-    `)
-    .eq("vc_id", id)
-    .order("created_at", { ascending: false });
+  const rawReviews = await sql<{
+    id: string;
+    content: string;
+    created_at: Date;
+    group_id: string;
+    group_name: string;
+  }>`
+    select review.id, review.content, review.created_at,
+           g.id as group_id, g.name as group_name
+    from review
+    join validation_group g on g.id = review.validation_group_id
+    where review.vc_id = ${id}
+    order by review.created_at desc`;
 
-  if (reviewsError) {
-    console.error("Error fetching reviews:", reviewsError);
-  }
-
-  // Transform reviews to flatten the validation_group relation
-  const reviews = rawReviews?.map((review) => ({
-    ...review,
-    validation_group: review.validation_group as unknown as { id: string; name: string } | null,
+  const reviews = rawReviews.map((review) => ({
+    id: review.id,
+    content: review.content,
+    created_at: new Date(review.created_at).toISOString(),
+    validation_group: { id: review.group_id, name: review.group_name },
   }));
 
   return (

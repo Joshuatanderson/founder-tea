@@ -13,7 +13,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { createClient } from "@/lib/supabase/client";
 import { ShieldCheck, Loader2, Lock, Unlock, CheckCircle, ArrowLeft } from "lucide-react";
 import { getIdentityStorageKey, notifyIdentityChanged } from "@/lib/constants";
 
@@ -73,16 +72,15 @@ export function VerifyModal({ trigger, open: controlledOpen, onOpenChange }: Pro
   useEffect(() => {
     if (open && allGroups.length === 0) {
       setIsLoadingGroups(true);
-      const supabase = createClient();
-      supabase
-        .from("validation_group")
-        .select("id, name")
-        .then(({ data, error }) => {
-          if (!error && data) {
-            setAllGroups(data);
+      fetch("/api/groups")
+        .then((response) => (response.ok ? response.json() : null))
+        .then((data) => {
+          if (data?.groups) {
+            setAllGroups(data.groups);
           }
-          setIsLoadingGroups(false);
-        });
+        })
+        .catch((err) => console.error("Error loading groups:", err))
+        .finally(() => setIsLoadingGroups(false));
     }
   }, [open, allGroups.length]);
 
@@ -90,28 +88,16 @@ export function VerifyModal({ trigger, open: controlledOpen, onOpenChange }: Pro
   const searchGroups = useCallback(async (domain: string) => {
     setIsSearching(true);
     try {
-      const supabase = createClient();
-      const { data, error } = await supabase
-        .from("validation_group_member")
-        .select(`
-          validation_group:validation_group_id (
-            id,
-            name
-          )
-        `)
-        .eq("domain", domain);
+      const response = await fetch(`/api/groups?domain=${encodeURIComponent(domain)}`);
 
-      if (error) {
-        console.error("Error searching groups:", error);
+      if (!response.ok) {
+        console.error("Error searching groups:", response.status);
         setMatchingGroupIds(new Set());
         return;
       }
 
-      const ids = new Set(
-        data
-          ?.map((item) => (item.validation_group as unknown as ValidationGroup)?.id)
-          .filter(Boolean) || []
-      );
+      const { groups } = (await response.json()) as { groups: ValidationGroup[] };
+      const ids = new Set(groups.map((group) => group.id));
 
       setMatchingGroupIds(ids);
     } catch (err) {

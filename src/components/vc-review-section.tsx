@@ -11,7 +11,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, ShieldCheck, ShieldX, Send, CheckCircle, AlertCircle, RotateCcw, ArrowLeft } from "lucide-react";
 import { IDENTITY_STORAGE_PREFIX, getGroupIdFromStorageKey, getIdentityStorageKey, IDENTITY_CHANGED_EVENT, OPTIMISTIC_SUBMISSION_STATE, OptimisticSubmissionState } from "@/lib/constants";
-import { createClient } from "@/lib/supabase/client";
 import { VerifyModal } from "@/components/verify-modal";
 import { ReviewList } from "@/components/review-list";
 
@@ -63,14 +62,10 @@ export function VCReviewSection({ vcId, vcName, reviews }: Props) {
       return;
     }
 
-    const supabase = createClient();
-    const { data, error } = await supabase
-      .from("validation_group")
-      .select("id, name")
-      .in("id", groupIds);
-
-    if (!error && data) {
-      setVerifiedGroups(data);
+    const response = await fetch(`/api/groups?ids=${groupIds.join(",")}`);
+    if (response.ok) {
+      const { groups } = await response.json();
+      setVerifiedGroups(groups);
     }
     setIsLoading(false);
   }, []);

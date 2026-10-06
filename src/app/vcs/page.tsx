@@ -1,27 +1,25 @@
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { sql } from "@/lib/db";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
 import { ArrowLeft, Building2, ExternalLink, Plus } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function VCsPage() {
-  const supabase = await createClient();
-
   // Fetch all VCs with review counts
-  const { data: vcs, error } = await supabase
-    .from("vc")
-    .select(`
-      id,
-      name,
-      website,
-      review:review(count)
-    `)
-    .order("name");
-
-  if (error) {
-    console.error("Error fetching VCs:", error);
-  }
+  const vcs = await sql<{
+    id: string;
+    name: string;
+    website: string | null;
+    review_count: number;
+  }>`
+    select vc.id, vc.name, vc.website, count(review.id)::int as review_count
+    from vc
+    left join review on review.vc_id = vc.id
+    group by vc.id
+    order by vc.name`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -54,7 +52,7 @@ export default async function VCsPage() {
         {/* VC Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {vcs?.map((vc) => {
-            const reviewCount = (vc.review as { count: number }[])?.[0]?.count ?? 0;
+            const reviewCount = vc.review_count;
 
             return (
               <Link key={vc.id} href={`/vcs/${vc.id}`}>

@@ -9,7 +9,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { createClient } from "@/lib/supabase/client";
 import { User, Check, LogOut } from "lucide-react";
 import { IDENTITY_STORAGE_PREFIX, IDENTITY_CHANGED_EVENT, getGroupIdFromStorageKey, notifyIdentityChanged } from "@/lib/constants";
 
@@ -41,15 +40,10 @@ export function UserStatus() {
       return;
     }
 
-    // Fetch group names from Supabase
-    const supabase = createClient();
-    const { data, error } = await supabase
-      .from("validation_group")
-      .select("id, name")
-      .in("id", groupIds);
-
-    if (!error && data) {
-      setVerifiedGroups(data);
+    const response = await fetch(`/api/groups?ids=${groupIds.join(",")}`);
+    if (response.ok) {
+      const { groups } = await response.json();
+      setVerifiedGroups(groups);
     }
 
     setIsLoading(false);

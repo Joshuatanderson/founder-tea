@@ -1,11 +1,5 @@
 import { verifyChallenge } from "@/lib/verification";
-import { createClient } from "@supabase/supabase-js";
-
-// Server-side Supabase client
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY!
-);
+import { sql, isUuid } from "@/lib/db";
 
 export async function POST(request: Request) {
   console.log("[confirm] Request received");
@@ -60,14 +54,13 @@ export async function POST(request: Request) {
 
       // Extract domain from verified email and validate group membership
       const domain = result.email!.split("@")[1];
-      const { data: membership, error: membershipError } = await supabase
-        .from("validation_group_member")
-        .select("id")
-        .eq("domain", domain)
-        .eq("validation_group_id", groupId)
-        .single();
+      const memberships = isUuid(groupId)
+        ? await sql`
+            select id from validation_group_member
+            where domain = ${domain} and validation_group_id = ${groupId}`
+        : [];
 
-      if (membershipError || !membership) {
+      if (memberships.length === 0) {
         console.log("[confirm] Domain not in requested group:", { domain, groupId });
         return Response.json(
           { error: "Email domain not eligible for this group" },
@@ -76,13 +69,10 @@ export async function POST(request: Request) {
       }
 
       // Check if commitment already exists
-      const { data: existing } = await supabase
-        .from("identity_commitment")
-        .select("id")
-        .eq("commitment", commitment)
-        .single();
+      const existing = await sql`
+        select id from identity_commitment where commitment = ${commitment}`;
 
-      if (existing) {
+      if (existing.length > 0) {
         console.log("[confirm] Commitment already exists");
         return Response.json({
           success: true,
@@ -91,20 +81,9 @@ export async function POST(request: Request) {
       }
 
       // Store the commitment
-      const { error: insertError } = await supabase
-        .from("identity_commitment")
-        .insert({
-          validation_group_id: groupId,
-          commitment: commitment,
-        });
-
-      if (insertError) {
-        console.error("[confirm] Failed to store commitment:", insertError);
-        return Response.json(
-          { error: "Failed to store commitment" },
-          { status: 500 }
-        );
-      }
+      await sql`
+        insert into identity_commitment (validation_group_id, commitment)
+        values (${groupId}, ${commitment})`;
 
       console.log("[confirm] Commitment stored successfully for group:", groupId);
     }

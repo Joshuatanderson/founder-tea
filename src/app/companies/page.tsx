@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -70,21 +69,19 @@ export default function CompaniesPage() {
   // Fetch validation groups on mount
   useEffect(() => {
     async function fetchValidationGroups() {
-      const supabase = createClient();
-      const { data, error } = await supabase
-        .from("validation_group")
-        .select("*")
-        .order("name");
+      const response = await fetch("/api/groups");
 
-      if (error) {
-        console.error("Error fetching validation groups:", error);
+      if (!response.ok) {
+        console.error("Error fetching validation groups:", response.status);
         return;
       }
 
-      setValidationGroups(data || []);
+      const { groups } = (await response.json()) as { groups: ValidationGroup[] };
+
+      setValidationGroups(groups);
       // Select first group by default
-      if (data && data.length > 0) {
-        setSelectedGroupId(data[0].id);
+      if (groups.length > 0) {
+        setSelectedGroupId(groups[0].id);
       }
       setLoading(false);
     }
@@ -105,31 +102,26 @@ export default function CompaniesPage() {
 
     async function fetchCompanies() {
       setLoading(true);
-      const supabase = createClient();
-      const from = (currentPage - 1) * PAGE_SIZE;
-      const to = from + PAGE_SIZE - 1;
-
-      let query = supabase
-        .from("validation_group_member")
-        .select("*", { count: "exact" })
-        .eq("validation_group_id", selectedGroupId);
-
-      // Add fuzzy search filter for company_name and domain
+      const params = new URLSearchParams({
+        groupId: selectedGroupId!,
+        page: String(currentPage),
+      });
+      // Fuzzy search on company_name and domain
       if (debouncedSearch) {
-        query = query.or(`company_name.ilike.*${debouncedSearch}*,domain.ilike.*${debouncedSearch}*`);
+        params.set("search", debouncedSearch);
       }
 
-      const { data, error, count } = await query
-        .order("first_session_year", { ascending: true, nullsFirst: false })
-        .range(from, to);
+      const response = await fetch(`/api/companies?${params}`);
 
-      if (error) {
-        console.error("Error fetching companies:", error);
+      if (!response.ok) {
+        console.error("Error fetching companies:", response.status);
         setLoading(false);
         return;
       }
 
-      setCompanies(data || []);
+      const { companies, count } = await response.json();
+
+      setCompanies(companies || []);
       setTotalCount(count || 0);
       setLoading(false);
     }
